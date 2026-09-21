@@ -1,9 +1,34 @@
 "use client";
 
-import { Github, Linkedin, Mail, FileText, ArrowUpRight, Download } from "lucide-react";
+import { useState } from "react";
+import { Github, Linkedin, Mail, FileText, ArrowUpRight, Download, Copy, Check } from "lucide-react";
 import Link from "next/link";
 
+const EMAIL = "usamaaliawan88@gmail.com";
+
 export default function Contact() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Fallback for older browsers
+      const textArea = document.createElement("textarea");
+      textArea.value = EMAIL;
+      textArea.style.position = "fixed";
+      textArea.style.opacity = "0";
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textArea);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
+
   return (
     <section id="contact" className="py-20 sm:py-28">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
@@ -20,13 +45,34 @@ export default function Contact() {
 
           <div className="flex flex-wrap items-center gap-3">
             <a
-              href="mailto:usamaaliawan88@gmail.com"
+              href={`mailto:${EMAIL}`}
               className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-[#111827] text-white hover:bg-[#1F2937] text-xs font-semibold tracking-wide transition-all shadow-sm group"
             >
               <Mail className="w-4 h-4 text-[#CCFBF1]" />
               <span>Send an email</span>
               <ArrowUpRight className="w-4 h-4 text-[#9CA3AF] group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
             </a>
+
+            <button
+              onClick={handleCopyEmail}
+              className={`inline-flex items-center gap-2 px-5 py-3 rounded-lg text-xs font-semibold tracking-wide transition-all shadow-sm group cursor-pointer ${
+                copied
+                  ? "bg-[#0D9488] text-white border border-[#0D9488]"
+                  : "bg-white border border-[#E8E8E4] text-[#111827] hover:bg-[#F4F4F0] hover:border-[#0D9488]/40"
+              }`}
+            >
+              {copied ? (
+                <>
+                  <Check className="w-4 h-4" />
+                  <span>Copied!</span>
+                </>
+              ) : (
+                <>
+                  <Copy className="w-4 h-4 text-[#0D9488]" />
+                  <span>Copy email</span>
+                </>
+              )}
+            </button>
 
             <Link
               href="/cv"
