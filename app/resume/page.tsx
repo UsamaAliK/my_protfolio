@@ -4,11 +4,11 @@ import { Download, ExternalLink, ArrowLeft, Mail, Phone, Github, Linkedin, Brief
 import Link from "next/link";
 
 export const metadata = {
-  title: "Usama Ali — Curriculum Vitae",
-  description: "CV and professional summary of Usama Ali, AI Engineer and ML Engineer.",
+  title: "Usama Ali — Resume",
+  description: "Resume and professional summary of Usama Ali, AI Engineer and ML Engineer.",
 };
 
-export default function CVPage() {
+export default function ResumePage() {
   const experiences = [
     {
       role: "GenAI Engineer Intern",
@@ -51,43 +51,43 @@ export default function CVPage() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-[#FBFBF9] text-[#111827]">
+    <div className="min-h-screen flex flex-col justify-between bg-[#FBFBF9] dark:bg-[#0B0F1A] text-[#111827] dark:text-[#F9FAFB]">
       <Navbar />
 
       <main className="flex-grow max-w-4xl w-full mx-auto px-4 sm:px-6 pt-28 pb-20">
-        {/* Navigation back and Download CV header */}
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-[#E8E8E4]">
+        {/* Navigation back and Download Resume header */}
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-[#E8E8E4] dark:border-[#1F2937]">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-xs font-mono text-[#6B7280] hover:text-[#0D9488] transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-mono text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#0D9488] transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>Back to Portfolio</span>
           </Link>
 
           <a
-            href="/Usama_Ali_CV.pdf"
+            href="/Usama_Ali_Resume.pdf"
             target="_blank"
-            download="Usama_Ali_CV.pdf"
+            download="Usama_Ali_Resume.pdf"
             className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#0D9488] text-white hover:bg-[#0F766E] text-xs font-semibold shadow-2xs transition-colors"
           >
             <Download className="w-4 h-4" />
-            <span>Download Official CV (PDF)</span>
+            <span>Download Resume (PDF)</span>
           </a>
         </div>
 
-        {/* CV Paper Container */}
-        <div className="bg-white border border-[#E8E8E4] rounded-xl p-8 sm:p-12 shadow-sm space-y-8">
+        {/* Resume Paper Container */}
+        <div className="bg-white dark:bg-[#111827] border border-[#E8E8E4] dark:border-[#1F2937] rounded-xl p-8 sm:p-12 shadow-sm space-y-8">
           {/* Header */}
-          <div className="border-b border-[#E8E8E4] pb-6 text-center sm:text-left">
-            <h1 className="text-3xl font-bold tracking-tight text-[#111827]">
+          <div className="border-b border-[#E8E8E4] dark:border-[#1F2937] pb-6 text-center sm:text-left">
+            <h1 className="text-3xl font-bold tracking-tight text-[#111827] dark:text-[#F9FAFB]">
               USAMA ALI
             </h1>
             <p className="text-sm font-semibold text-[#0D9488] mt-1 font-mono">
               AI Engineer &bull; ML Engineer
             </p>
 
-            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs font-mono text-[#6B7280] mt-4">
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs font-mono text-[#6B7280] dark:text-[#9CA3AF] mt-4">
               <span className="flex items-center gap-1.5">
                 <Phone className="w-3.5 h-3.5 text-[#0D9488]" />
                 +92 0318 4383585
@@ -100,7 +100,7 @@ export default function CVPage() {
                 href="https://github.com/UsamaAliK"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 hover:text-[#111827] transition-colors"
+                className="flex items-center gap-1.5 hover:text-[#111827] dark:hover:text-[#F9FAFB] transition-colors"
               >
                 <Github className="w-3.5 h-3.5 text-[#0D9488]" />
                 UsamaAliK
@@ -109,7 +109,7 @@ export default function CVPage() {
                 href="https://www.linkedin.com/in/usama-ali-ai-eng"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 hover:text-[#111827] transition-colors"
+                className="flex items-center gap-1.5 hover:text-[#111827] dark:hover:text-[#F9FAFB] transition-colors"
               >
                 <Linkedin className="w-3.5 h-3.5 text-[#0D9488]" />
                 usama-ali-ai-eng
@@ -119,61 +119,61 @@ export default function CVPage() {
 
           {/* Summary */}
           <div className="space-y-2">
-            <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-[#111827] border-b border-[#E8E8E4] pb-1">
+            <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-[#111827] dark:text-[#F9FAFB] border-b border-[#E8E8E4] dark:border-[#1F2937] pb-1">
               Summary
             </h2>
-            <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed pt-1">
+            <p className="text-xs sm:text-sm text-[#4B5563] dark:text-[#9CA3AF] leading-relaxed pt-1">
               AI/ML Engineer with hands-on experience building AI applications using Python, RAG pipelines, LLM APIs, embeddings, and machine learning. Experienced in FastAPI backend development, PostgreSQL, semantic search, and integrating AI technologies into practical applications.
             </p>
           </div>
 
           {/* Tools & Technology */}
           <div className="space-y-3">
-            <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-[#111827] border-b border-[#E8E8E4] pb-1">
+            <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-[#111827] dark:text-[#F9FAFB] border-b border-[#E8E8E4] dark:border-[#1F2937] pb-1">
               Tools & Technology
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-[#374151]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-[#374151] dark:text-[#9CA3AF]">
               <div>
-                <span className="font-semibold text-[#111827] block mb-0.5">Programming Languages:</span>
-                <span className="text-[#6B7280]">Python</span>
+                <span className="font-semibold text-[#111827] dark:text-[#F9FAFB] block mb-0.5">Programming Languages:</span>
+                <span className="text-[#6B7280] dark:text-[#9CA3AF]">Python</span>
               </div>
               <div>
-                <span className="font-semibold text-[#111827] block mb-0.5">AI & Machine Learning:</span>
-                <span className="text-[#6B7280]">RAG, LLM APIs, Embeddings, LangChain, PyTorch, TensorFlow</span>
+                <span className="font-semibold text-[#111827] dark:text-[#F9FAFB] block mb-0.5">AI & Machine Learning:</span>
+                <span className="text-[#6B7280] dark:text-[#9CA3AF]">RAG, LLM APIs, Embeddings, LangChain, PyTorch, TensorFlow</span>
               </div>
               <div>
-                <span className="font-semibold text-[#111827] block mb-0.5">Backend & Security:</span>
-                <span className="text-[#6B7280]">FastAPI, REST APIs, SQLAlchemy, Alembic, JWT Auth, Authorization</span>
+                <span className="font-semibold text-[#111827] dark:text-[#F9FAFB] block mb-0.5">Backend & Security:</span>
+                <span className="text-[#6B7280] dark:text-[#9CA3AF]">FastAPI, REST APIs, SQLAlchemy, Alembic, JWT Auth, Authorization</span>
               </div>
               <div>
-                <span className="font-semibold text-[#111827] block mb-0.5">Databases & Vector Search:</span>
-                <span className="text-[#6B7280]">PostgreSQL, SQLite, pgvector, ChromaDB, FAISS</span>
+                <span className="font-semibold text-[#111827] dark:text-[#F9FAFB] block mb-0.5">Databases & Vector Search:</span>
+                <span className="text-[#6B7280] dark:text-[#9CA3AF]">PostgreSQL, SQLite, pgvector, ChromaDB, FAISS</span>
               </div>
               <div className="sm:col-span-2">
-                <span className="font-semibold text-[#111827] block mb-0.5">Tools & Automation:</span>
-                <span className="text-[#6B7280]">Pandas, NumPy, Git, GitHub API, N8N</span>
+                <span className="font-semibold text-[#111827] dark:text-[#F9FAFB] block mb-0.5">Tools & Automation:</span>
+                <span className="text-[#6B7280] dark:text-[#9CA3AF]">Pandas, NumPy, Git, GitHub API, N8N</span>
               </div>
             </div>
           </div>
 
           {/* Experience */}
           <div className="space-y-4">
-            <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-[#111827] border-b border-[#E8E8E4] pb-1">
+            <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-[#111827] dark:text-[#F9FAFB] border-b border-[#E8E8E4] dark:border-[#1F2937] pb-1">
               Experience
             </h2>
             {experiences.map((exp) => (
               <div key={exp.role} className="space-y-2">
                 <div className="flex flex-wrap items-center justify-between gap-1 text-xs">
-                  <span className="font-bold text-[#111827]">
-                    {exp.role} &mdash; <span className="font-normal text-[#4B5563]">{exp.company}</span>
+                  <span className="font-bold text-[#111827] dark:text-[#F9FAFB]">
+                    {exp.role} &mdash; <span className="font-normal text-[#4B5563] dark:text-[#9CA3AF]">{exp.company}</span>
                   </span>
-                  <span className="font-mono text-[#6B7280] text-[11px]">
+                  <span className="font-mono text-[#6B7280] dark:text-[#9CA3AF] text-[11px]">
                     {exp.period}
                   </span>
                 </div>
                 <ul className="space-y-1.5 pl-1">
                   {exp.points.map((pt, i) => (
-                    <li key={i} className="flex items-start gap-2 text-xs text-[#4B5563]">
+                    <li key={i} className="flex items-start gap-2 text-xs text-[#4B5563] dark:text-[#9CA3AF]">
                       <CheckCircle2 className="w-3.5 h-3.5 text-[#0D9488] shrink-0 mt-0.5" />
                       <span>{pt}</span>
                     </li>
@@ -185,12 +185,12 @@ export default function CVPage() {
 
           {/* Selected Projects */}
           <div className="space-y-4">
-            <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-[#111827] border-b border-[#E8E8E4] pb-1">
+            <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-[#111827] dark:text-[#F9FAFB] border-b border-[#E8E8E4] dark:border-[#1F2937] pb-1">
               Selected Projects
             </h2>
             {projects.map((proj) => (
               <div key={proj.title} className="space-y-1.5">
-                <div className="flex items-center justify-between gap-2 text-xs font-bold text-[#111827]">
+                <div className="flex items-center justify-between gap-2 text-xs font-bold text-[#111827] dark:text-[#F9FAFB]">
                   <span>{proj.title}</span>
                   <a
                     href={proj.link}
@@ -204,7 +204,7 @@ export default function CVPage() {
                 </div>
                 <ul className="space-y-1 pl-1">
                   {proj.points.map((pt, i) => (
-                    <li key={i} className="flex items-start gap-2 text-xs text-[#4B5563]">
+                    <li key={i} className="flex items-start gap-2 text-xs text-[#4B5563] dark:text-[#9CA3AF]">
                       <span className="text-[#0D9488] font-bold">&bull;</span>
                       <span>{pt}</span>
                     </li>
@@ -216,18 +216,18 @@ export default function CVPage() {
 
           {/* Education */}
           <div className="space-y-2">
-            <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-[#111827] border-b border-[#E8E8E4] pb-1">
+            <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-[#111827] dark:text-[#F9FAFB] border-b border-[#E8E8E4] dark:border-[#1F2937] pb-1">
               Education
             </h2>
             <div className="flex flex-wrap items-center justify-between gap-1 text-xs">
-              <span className="font-bold text-[#111827]">
+              <span className="font-bold text-[#111827] dark:text-[#F9FAFB]">
                 Bachelor of Science in Computer Science
               </span>
-              <span className="font-mono text-[#6B7280] text-[11px]">
+              <span className="font-mono text-[#6B7280] dark:text-[#9CA3AF] text-[11px]">
                 2022 &ndash; 2026
               </span>
             </div>
-            <p className="text-xs text-[#4B5563]">
+            <p className="text-xs text-[#4B5563] dark:text-[#9CA3AF]">
               University of Management and Technology, Lahore
             </p>
           </div>

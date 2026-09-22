@@ -53,17 +53,17 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-16 sm:py-24 border-b border-[#E8E8E4]/60">
+    <section id="skills" className="py-16 sm:py-24 border-b border-[#E8E8E4]/60 dark:border-[#1F2937]/60">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className="max-w-2xl mb-8">
           <span className="text-xs font-mono text-[#0D9488] tracking-wider uppercase font-semibold block mb-3">
             03 / Capabilities
           </span>
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#111827] mb-3">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#111827] dark:text-[#F9FAFB] mb-3">
             What I work with
           </h2>
-          <p className="text-sm sm:text-base text-[#6B7280] leading-relaxed">
+          <p className="text-sm sm:text-base text-[#6B7280] dark:text-[#9CA3AF] leading-relaxed">
             My work sits at the intersection of AI engineering, machine learning, and backend development.
           </p>
         </div>
@@ -76,16 +76,16 @@ export default function Skills() {
           {skillColumns.map((col) => (
             <div
               key={col.category}
-              className="p-5 bg-white border border-[#E8E8E4] rounded-xl hover:border-[#0D9488]/40 transition-colors shadow-2xs group"
+              className="p-5 bg-white dark:bg-[#111827] border border-[#E8E8E4] dark:border-[#1F2937] rounded-xl hover:border-[#0D9488]/40 transition-colors shadow-2xs group"
             >
-              <h3 className="text-xs font-mono text-[#111827] uppercase tracking-wider font-semibold mb-4 pb-2 border-b border-[#E8E8E4]">
+              <h3 className="text-xs font-mono text-[#111827] dark:text-[#F9FAFB] uppercase tracking-wider font-semibold mb-4 pb-2 border-b border-[#E8E8E4] dark:border-[#1F2937]">
                 {col.category}
               </h3>
               <div className="flex flex-wrap gap-1.5">
                 {col.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-2.5 py-1 rounded bg-[#FBFBF9] border border-[#E8E8E4] text-xs font-medium text-[#111827] hover:border-[#0D9488]/40 hover:bg-[#CCFBF1]/20 transition-colors"
+                    className="px-2.5 py-1 rounded bg-[#FBFBF9] dark:bg-[#1F2937] border border-[#E8E8E4] dark:border-[#374151] text-xs font-medium text-[#111827] dark:text-[#9CA3AF] hover:border-[#0D9488]/40 hover:bg-[#CCFBF1]/20 dark:hover:bg-[#0D9488]/10 transition-colors"
                   >
                     {skill}
                   </span>

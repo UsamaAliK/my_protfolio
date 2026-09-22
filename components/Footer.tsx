@@ -4,12 +4,12 @@ import { Github, Linkedin, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#E8E8E4] bg-[#FBFBF9] py-10 text-xs text-[#6B7280]">
+    <footer className="border-t border-[#E8E8E4] dark:border-[#1F2937] bg-[#FBFBF9] dark:bg-[#0B0F1A] py-10 text-xs text-[#6B7280] dark:text-[#9CA3AF]">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         {/* Left branding */}
         <div className="flex flex-col sm:flex-row items-center gap-2 text-center sm:text-left">
-          <span className="font-semibold text-[#111827]">Usama Ali</span>
-          <span className="hidden sm:inline text-[#D1D1CB]">•</span>
+          <span className="font-semibold text-[#111827] dark:text-[#F9FAFB]">Usama Ali</span>
+          <span className="hidden sm:inline text-[#D1D1CB] dark:text-[#374151]">•</span>
           <span>AI Engineer · Python · AI/ML</span>
         </div>
 
@@ -20,7 +20,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub Profile"
-            className="p-1.5 text-[#6B7280] hover:text-[#111827] transition-colors"
+            className="p-1.5 text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111827] dark:hover:text-[#F9FAFB] transition-colors"
           >
             <Github className="w-4 h-4" />
           </a>
@@ -29,21 +29,21 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn Profile"
-            className="p-1.5 text-[#6B7280] hover:text-[#111827] transition-colors"
+            className="p-1.5 text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111827] dark:hover:text-[#F9FAFB] transition-colors"
           >
             <Linkedin className="w-4 h-4" />
           </a>
           <a
             href="mailto:usamaaliawan88@gmail.com"
             aria-label="Email Contact"
-            className="p-1.5 text-[#6B7280] hover:text-[#111827] transition-colors"
+            className="p-1.5 text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111827] dark:hover:text-[#F9FAFB] transition-colors"
           >
             <Mail className="w-4 h-4" />
           </a>
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 mt-6 pt-6 border-t border-[#E8E8E4]/50 flex items-center justify-between text-[11px] text-[#9CA3AF]">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 mt-6 pt-6 border-t border-[#E8E8E4]/50 dark:border-[#1F2937]/50 flex items-center justify-between text-[11px] text-[#9CA3AF] dark:text-[#6B7280]">
         <p>© 2026 Usama Ali. All rights reserved.</p>
         <p className="font-mono">Built with Next.js & Tailwind CSS</p>
       </div>
