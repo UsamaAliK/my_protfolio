@@ -61,13 +61,18 @@ export const metadata: Metadata = {
   },
 };
 
+const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.classList.remove('dark')}else{document.documentElement.classList.add('dark')}}catch(e){}})();`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`dark ${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`dark ${inter.variable} ${jetbrainsMono.variable}`}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className="font-sans antialiased text-[#111827] dark:text-[#F9FAFB] bg-[#FBFBF9] dark:bg-[#0B0F1A] selection:bg-[#CCFBF1] selection:text-[#0F766E] dark:selection:bg-[#0D9488]/30 dark:selection:text-[#5EEAD4]">
         {children}
       </body>

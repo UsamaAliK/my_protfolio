@@ -33,8 +33,8 @@ export default function Contact() {
     <section id="contact" className="py-20 sm:py-28">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <div className="max-w-3xl">
-          <span className="text-xs font-mono text-[#0D9488] tracking-wider uppercase font-semibold block mb-3">
-            07 / Contact
+          <span className="text-xs font-mono text-[#0D9488] dark:text-[#5EEAD4] tracking-wider uppercase font-semibold block mb-3">
+            05 / Contact
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#111827] dark:text-[#F9FAFB] mb-4">
             Let's build something useful.
@@ -58,7 +58,7 @@ export default function Contact() {
               className={`inline-flex items-center gap-2 px-5 py-3 rounded-lg text-xs font-semibold tracking-wide transition-all shadow-sm group cursor-pointer ${
                 copied
                   ? "bg-[#0D9488] text-white border border-[#0D9488]"
-                  : "bg-white dark:bg-[#111827] border border-[#E8E8E4] dark:border-[#1F2937] text-[#111827] dark:text-[#F9FAFB] hover:bg-[#F4F4F0] dark:hover:bg-[#1F2937] hover:border-[#0D9488]/40"
+                  : "bg-white dark:bg-[#111827] border border-[#E8E8E4] dark:border-[#1F2937] text-[#111827] dark:text-[#F9FAFB] hover:bg-[#F4F4F0] dark:hover:bg-[#1F2937] hover:border-[#0D9488]/40 dark:hover:border-[#5EEAD4]/40"
               }`}
             >
               {copied ? (
@@ -68,7 +68,7 @@ export default function Contact() {
                 </>
               ) : (
                 <>
-                  <Copy className="w-4 h-4 text-[#0D9488]" />
+                  <Copy className="w-4 h-4 text-[#0D9488] dark:text-[#5EEAD4]" />
                   <span>Copy email</span>
                 </>
               )}
@@ -86,9 +86,9 @@ export default function Contact() {
               href="/Usama_Ali_Resume.pdf"
               target="_blank"
               download="Usama_Ali_Resume.pdf"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-white dark:bg-[#111827] border border-[#E8E8E4] dark:border-[#1F2937] text-[#111827] dark:text-[#F9FAFB] hover:bg-[#F4F4F0] dark:hover:bg-[#1F2937] hover:border-[#0D9488]/40 text-xs font-semibold tracking-wide transition-all group"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-white dark:bg-[#111827] border border-[#E8E8E4] dark:border-[#1F2937] text-[#111827] dark:text-[#F9FAFB] hover:bg-[#F4F4F0] dark:hover:bg-[#1F2937] hover:border-[#0D9488]/40 dark:hover:border-[#5EEAD4]/40 text-xs font-semibold tracking-wide transition-all group"
             >
-              <Download className="w-4 h-4 text-[#0D9488]" />
+              <Download className="w-4 h-4 text-[#0D9488] dark:text-[#5EEAD4]" />
               <span>Download Resume (PDF)</span>
             </a>
 
@@ -96,22 +96,22 @@ export default function Contact() {
               href="https://github.com/UsamaAliK"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-white dark:bg-[#111827] border border-[#E8E8E4] dark:border-[#1F2937] text-[#111827] dark:text-[#F9FAFB] hover:bg-[#F4F4F0] dark:hover:bg-[#1F2937] hover:border-[#0D9488]/40 text-xs font-semibold tracking-wide transition-all group"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-white dark:bg-[#111827] border border-[#E8E8E4] dark:border-[#1F2937] text-[#111827] dark:text-[#F9FAFB] hover:bg-[#F4F4F0] dark:hover:bg-[#1F2937] hover:border-[#0D9488]/40 dark:hover:border-[#5EEAD4]/40 text-xs font-semibold tracking-wide transition-all group"
             >
               <Github className="w-4 h-4 text-[#4B5563] dark:text-[#9CA3AF]" />
               <span>GitHub</span>
-              <ArrowUpRight className="w-4 h-4 text-[#9CA3AF] group-hover:text-[#0D9488] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+              <ArrowUpRight className="w-4 h-4 text-[#9CA3AF] group-hover:text-[#0D9488] dark:group-hover:text-[#5EEAD4] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
             </a>
 
             <a
               href="https://www.linkedin.com/in/usama-ali-ai-eng"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-white dark:bg-[#111827] border border-[#E8E8E4] dark:border-[#1F2937] text-[#111827] dark:text-[#F9FAFB] hover:bg-[#F4F4F0] dark:hover:bg-[#1F2937] hover:border-[#0D9488]/40 text-xs font-semibold tracking-wide transition-all group"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-white dark:bg-[#111827] border border-[#E8E8E4] dark:border-[#1F2937] text-[#111827] dark:text-[#F9FAFB] hover:bg-[#F4F4F0] dark:hover:bg-[#1F2937] hover:border-[#0D9488]/40 dark:hover:border-[#5EEAD4]/40 text-xs font-semibold tracking-wide transition-all group"
             >
               <Linkedin className="w-4 h-4 text-[#0077B5]" />
               <span>LinkedIn</span>
-              <ArrowUpRight className="w-4 h-4 text-[#9CA3AF] group-hover:text-[#0D9488] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+              <ArrowUpRight className="w-4 h-4 text-[#9CA3AF] group-hover:text-[#0D9488] dark:group-hover:text-[#5EEAD4] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
             </a>
           </div>
         </div>

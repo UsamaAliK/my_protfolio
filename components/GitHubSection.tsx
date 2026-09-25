@@ -16,8 +16,8 @@ export default function GitHubSection() {
         <div className="bg-white dark:bg-[#111827] border border-[#E8E8E4] dark:border-[#1F2937] rounded-xl p-8 shadow-2xs">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-8 border-b border-[#E8E8E4] dark:border-[#1F2937]">
             <div className="max-w-xl space-y-2">
-              <span className="text-xs font-mono text-[#0D9488] tracking-wider uppercase font-semibold block">
-                06 / Open Source & Code
+              <span className="text-xs font-mono text-[#0D9488] dark:text-[#5EEAD4] tracking-wider uppercase font-semibold block">
+                04 / Open Source & Code
               </span>
               <h2 className="text-2xl font-bold tracking-tight text-[#111827] dark:text-[#F9FAFB]">
                 Building in public
@@ -53,18 +53,18 @@ export default function GitHubSection() {
                   href={repo.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3.5 bg-[#FBFBF9] dark:bg-[#0B0F1A] hover:bg-white dark:hover:bg-[#1F2937] border border-[#E8E8E4] dark:border-[#1F2937] hover:border-[#0D9488]/40 rounded-lg transition-all flex items-center justify-between group"
+                  className="p-3.5 bg-[#FBFBF9] dark:bg-[#0B0F1A] hover:bg-white dark:hover:bg-[#1F2937] border border-[#E8E8E4] dark:border-[#1F2937] hover:border-[#0D9488]/40 dark:hover:border-[#5EEAD4]/40 rounded-lg transition-all flex items-center justify-between group"
                 >
                   <div className="flex items-center gap-3">
-                    <Code2 className="w-4 h-4 text-[#6B7280] dark:text-[#9CA3AF] group-hover:text-[#0D9488] transition-colors" />
+                    <Code2 className="w-4 h-4 text-[#6B7280] dark:text-[#9CA3AF] group-hover:text-[#0D9488] dark:group-hover:text-[#5EEAD4] transition-colors" />
                     <div>
-                      <h4 className="text-xs font-semibold text-[#111827] dark:text-[#F9FAFB] group-hover:text-[#0D9488] transition-colors">
+                      <h4 className="text-xs font-semibold text-[#111827] dark:text-[#F9FAFB] group-hover:text-[#0D9488] dark:group-hover:text-[#5EEAD4] transition-colors">
                         {repo.name}
                       </h4>
                       <p className="text-[11px] text-[#6B7280] dark:text-[#9CA3AF]">{repo.desc}</p>
                     </div>
                   </div>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-[#9CA3AF] dark:text-[#6B7280] group-hover:text-[#0D9488] transition-colors shrink-0" />
+                  <ArrowUpRight className="w-3.5 h-3.5 text-[#9CA3AF] dark:text-[#6B7280] group-hover:text-[#0D9488] dark:group-hover:text-[#5EEAD4] transition-colors shrink-0" />
                 </a>
               ))}
             </div>

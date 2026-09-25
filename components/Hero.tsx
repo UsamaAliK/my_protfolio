@@ -24,7 +24,7 @@ export default function Hero() {
 
             {/* Hero Description */}
             <p className="text-base sm:text-lg text-[#4B5563] dark:text-[#9CA3AF] max-w-2xl leading-relaxed mb-8">
-              I'm Usama, an AI engineer focused on Python, machine learning, RAG systems,
+              I'm an AI engineer focused on Python, machine learning, RAG systems,
               LLM applications, and backend development. I enjoy turning AI ideas into practical software
               that people can actually use.
             </p>

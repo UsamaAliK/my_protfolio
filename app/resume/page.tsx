@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { Download, ExternalLink, ArrowLeft, Mail, Phone, Github, Linkedin, Briefcase, GraduationCap, CheckCircle2 } from "lucide-react";
+import { Download, ExternalLink, ArrowLeft, Mail, Phone, Github, Linkedin, Briefcase, GraduationCap, CheckCircle2, Code2 } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = {
@@ -19,6 +18,30 @@ export default function ResumePage() {
         "Built automation workflows using N8N to streamline recurring development tasks.",
         "Collaborated with team members to communicate requirements and support GenAI development activities.",
       ],
+      skills: ["GenAI Workflows", "LLM APIs", "N8N Automation", "Python", "API Integration"],
+    },
+  ];
+
+  const skillGroups = [
+    {
+      category: "Programming Languages",
+      items: ["Python", "SQL", "C++"],
+    },
+    {
+      category: "AI & Machine Learning",
+      items: ["RAG Pipelines", "LLM APIs", "Embeddings", "LangChain", "PyTorch", "TensorFlow", "Scikit-learn"],
+    },
+    {
+      category: "Backend & Security",
+      items: ["FastAPI", "REST APIs", "SQLAlchemy", "Alembic", "JWT Auth", "Authorization"],
+    },
+    {
+      category: "Databases & Vector Search",
+      items: ["PostgreSQL", "SQLite", "pgvector", "ChromaDB", "FAISS"],
+    },
+    {
+      category: "Tools & Automation",
+      items: ["Pandas", "NumPy", "Git", "GitHub API", "N8N"],
     },
   ];
 
@@ -50,16 +73,23 @@ export default function ResumePage() {
     },
   ];
 
+  const education = {
+    degree: "Bachelor of Science in Computer Science",
+    period: "2022 – 2026",
+    institution: "University of Management and Technology (UMT), Lahore",
+    details: "Coursework covering machine learning, data structures, algorithms, database systems, and software architecture.",
+  };
+
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-[#FBFBF9] dark:bg-[#0B0F1A] text-[#111827] dark:text-[#F9FAFB]">
+    <div className="min-h-screen flex flex-col justify-between bg-[#F8F9FA] dark:bg-[#0B0F19] text-[#1E293B] dark:text-[#F1F5F9] transition-colors">
       <Navbar />
 
       <main className="flex-grow max-w-4xl w-full mx-auto px-4 sm:px-6 pt-28 pb-20">
         {/* Navigation back and Download Resume header */}
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-[#E8E8E4] dark:border-[#1F2937]">
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-[#E2E8F0] dark:border-[#1E293B]">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-xs font-mono text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#0D9488] transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-mono text-[#64748B] dark:text-[#94A3B8] hover:text-[#4A6B82] dark:hover:text-[#8EB1D6] transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>Back to Portfolio</span>
@@ -69,173 +99,219 @@ export default function ResumePage() {
             href="/Usama_Ali_Resume.pdf"
             target="_blank"
             download="Usama_Ali_Resume.pdf"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#0D9488] text-white hover:bg-[#0F766E] text-xs font-semibold shadow-2xs transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#4A6B82] hover:bg-[#3D596E] text-white dark:bg-[#8EB1D6] dark:text-[#0B1019] dark:hover:bg-[#A3C5EA] text-xs font-semibold shadow-xs transition-all"
           >
             <Download className="w-4 h-4" />
             <span>Download Resume (PDF)</span>
           </a>
         </div>
 
-        {/* Resume Paper Container */}
-        <div className="bg-white dark:bg-[#111827] border border-[#E8E8E4] dark:border-[#1F2937] rounded-xl p-8 sm:p-12 shadow-sm space-y-8">
-          {/* Header */}
-          <div className="border-b border-[#E8E8E4] dark:border-[#1F2937] pb-6 text-center sm:text-left">
-            <h1 className="text-3xl font-bold tracking-tight text-[#111827] dark:text-[#F9FAFB]">
-              USAMA ALI
-            </h1>
-            <p className="text-sm font-semibold text-[#0D9488] mt-1 font-mono">
-              AI Engineer &bull; ML Engineer
-            </p>
+        {/* Soft-Toned Resume Paper Container */}
+        <div className="bg-[#FFFFFF] dark:bg-[#121722] border border-[#E2E8F0] dark:border-[#1E2638] rounded-2xl p-7 sm:p-11 shadow-[0_4px_25px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.35)] space-y-9">
+          
+          {/* Header Section */}
+          <div className="border-b border-[#E2E8F0] dark:border-[#1E2638] pb-7 text-center sm:text-left">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-2">
+              <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0F172A] dark:text-[#F8FAFC]">
+                USAMA ALI
+              </h1>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-[#4A6B82]/10 dark:bg-[#8EB1D6]/15 text-[#3D5A70] dark:text-[#8EB1D6] border border-[#4A6B82]/20 dark:border-[#8EB1D6]/25 self-center sm:self-auto">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#4A6B82] dark:bg-[#8EB1D6] animate-pulse" />
+                <span>AI Engineer · ML Engineer</span>
+              </div>
+            </div>
 
-            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs font-mono text-[#6B7280] dark:text-[#9CA3AF] mt-4">
-              <span className="flex items-center gap-1.5">
-                <Phone className="w-3.5 h-3.5 text-[#0D9488]" />
+            {/* Soft Contact Chips */}
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2.5 text-xs font-mono text-[#64748B] dark:text-[#94A3B8] mt-4">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#F1F5F9] dark:bg-[#172030] border border-[#E2E8F0] dark:border-[#1E293B]">
+                <Phone className="w-3.5 h-3.5 text-[#4A6B82] dark:text-[#8EB1D6]" />
                 +92 0318 4383585
               </span>
-              <span className="flex items-center gap-1.5">
-                <Mail className="w-3.5 h-3.5 text-[#0D9488]" />
+              <a
+                href="mailto:usamaaliawan88@gmail.com"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#F1F5F9] dark:bg-[#172030] border border-[#E2E8F0] dark:border-[#1E293B] hover:text-[#0F172A] dark:hover:text-[#F8FAFC] hover:border-[#4A6B82]/40 dark:hover:border-[#8EB1D6]/40 transition-colors"
+              >
+                <Mail className="w-3.5 h-3.5 text-[#4A6B82] dark:text-[#8EB1D6]" />
                 usamaaliawan88@gmail.com
-              </span>
+              </a>
               <a
                 href="https://github.com/UsamaAliK"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 hover:text-[#111827] dark:hover:text-[#F9FAFB] transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#F1F5F9] dark:bg-[#172030] border border-[#E2E8F0] dark:border-[#1E293B] hover:text-[#0F172A] dark:hover:text-[#F8FAFC] hover:border-[#4A6B82]/40 dark:hover:border-[#8EB1D6]/40 transition-colors"
               >
-                <Github className="w-3.5 h-3.5 text-[#0D9488]" />
+                <Github className="w-3.5 h-3.5 text-[#4A6B82] dark:text-[#8EB1D6]" />
                 UsamaAliK
               </a>
               <a
                 href="https://www.linkedin.com/in/usama-ali-ai-eng"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 hover:text-[#111827] dark:hover:text-[#F9FAFB] transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#F1F5F9] dark:bg-[#172030] border border-[#E2E8F0] dark:border-[#1E293B] hover:text-[#0F172A] dark:hover:text-[#F8FAFC] hover:border-[#4A6B82]/40 dark:hover:border-[#8EB1D6]/40 transition-colors"
               >
-                <Linkedin className="w-3.5 h-3.5 text-[#0D9488]" />
+                <Linkedin className="w-3.5 h-3.5 text-[#4A6B82] dark:text-[#8EB1D6]" />
                 usama-ali-ai-eng
               </a>
             </div>
           </div>
 
-          {/* Summary */}
-          <div className="space-y-2">
-            <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-[#111827] dark:text-[#F9FAFB] border-b border-[#E8E8E4] dark:border-[#1F2937] pb-1">
-              Summary
-            </h2>
-            <p className="text-xs sm:text-sm text-[#4B5563] dark:text-[#9CA3AF] leading-relaxed pt-1">
+          {/* Professional Summary */}
+          <div className="space-y-2.5">
+            <div className="flex items-center gap-2 pb-1.5 border-b border-[#E2E8F0] dark:border-[#1E2638]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#4A6B82] dark:bg-[#8EB1D6]" />
+              <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-[#0F172A] dark:text-[#F8FAFC]">
+                Summary
+              </h2>
+            </div>
+            <p className="text-xs sm:text-sm text-[#475569] dark:text-[#94A3B8] leading-relaxed pt-0.5">
               AI/ML Engineer with hands-on experience building AI applications using Python, RAG pipelines, LLM APIs, embeddings, and machine learning. Experienced in FastAPI backend development, PostgreSQL, semantic search, and integrating AI technologies into practical applications.
             </p>
           </div>
 
-          {/* Tools & Technology */}
-          <div className="space-y-3">
-            <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-[#111827] dark:text-[#F9FAFB] border-b border-[#E8E8E4] dark:border-[#1F2937] pb-1">
-              Tools & Technology
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-[#374151] dark:text-[#9CA3AF]">
-              <div>
-                <span className="font-semibold text-[#111827] dark:text-[#F9FAFB] block mb-0.5">Programming Languages:</span>
-                <span className="text-[#6B7280] dark:text-[#9CA3AF]">Python</span>
-              </div>
-              <div>
-                <span className="font-semibold text-[#111827] dark:text-[#F9FAFB] block mb-0.5">AI & Machine Learning:</span>
-                <span className="text-[#6B7280] dark:text-[#9CA3AF]">RAG, LLM APIs, Embeddings, LangChain, PyTorch, TensorFlow</span>
-              </div>
-              <div>
-                <span className="font-semibold text-[#111827] dark:text-[#F9FAFB] block mb-0.5">Backend & Security:</span>
-                <span className="text-[#6B7280] dark:text-[#9CA3AF]">FastAPI, REST APIs, SQLAlchemy, Alembic, JWT Auth, Authorization</span>
-              </div>
-              <div>
-                <span className="font-semibold text-[#111827] dark:text-[#F9FAFB] block mb-0.5">Databases & Vector Search:</span>
-                <span className="text-[#6B7280] dark:text-[#9CA3AF]">PostgreSQL, SQLite, pgvector, ChromaDB, FAISS</span>
-              </div>
-              <div className="sm:col-span-2">
-                <span className="font-semibold text-[#111827] dark:text-[#F9FAFB] block mb-0.5">Tools & Automation:</span>
-                <span className="text-[#6B7280] dark:text-[#9CA3AF]">Pandas, NumPy, Git, GitHub API, N8N</span>
-              </div>
+          {/* Tools & Technology with Soft Colored Chips */}
+          <div className="space-y-3.5">
+            <div className="flex items-center gap-2 pb-1.5 border-b border-[#E2E8F0] dark:border-[#1E2638]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#4A6B82] dark:bg-[#8EB1D6]" />
+              <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-[#0F172A] dark:text-[#F8FAFC]">
+                Tools & Technology
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              {skillGroups.map((grp) => (
+                <div key={grp.category} className="p-3.5 rounded-xl bg-[#F8FAFC] dark:bg-[#151C2A] border border-[#E2E8F0] dark:border-[#1E293B]">
+                  <span className="text-xs font-semibold text-[#0F172A] dark:text-[#F8FAFC] block mb-2 font-mono">
+                    {grp.category}
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {grp.items.map((item) => (
+                      <span
+                        key={item}
+                        className="px-2 py-0.5 rounded-md text-[11px] font-mono bg-[#EBF1F7] dark:bg-[#1A2536] text-[#334E68] dark:text-[#A6C5E6] border border-[#D5E2EE] dark:border-[#24354D]"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Experience */}
           <div className="space-y-4">
-            <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-[#111827] dark:text-[#F9FAFB] border-b border-[#E8E8E4] dark:border-[#1F2937] pb-1">
-              Experience
-            </h2>
+            <div className="flex items-center gap-2 pb-1.5 border-b border-[#E2E8F0] dark:border-[#1E2638]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#4A6B82] dark:bg-[#8EB1D6]" />
+              <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-[#0F172A] dark:text-[#F8FAFC]">
+                Experience
+              </h2>
+            </div>
+
             {experiences.map((exp) => (
-              <div key={exp.role} className="space-y-2">
+              <div key={exp.role} className="p-4 rounded-xl bg-[#F8FAFC] dark:bg-[#151C2A] border border-[#E2E8F0] dark:border-[#1E293B] space-y-3">
                 <div className="flex flex-wrap items-center justify-between gap-1 text-xs">
-                  <span className="font-bold text-[#111827] dark:text-[#F9FAFB]">
-                    {exp.role} &mdash; <span className="font-normal text-[#4B5563] dark:text-[#9CA3AF]">{exp.company}</span>
-                  </span>
-                  <span className="font-mono text-[#6B7280] dark:text-[#9CA3AF] text-[11px]">
+                  <div>
+                    <h3 className="text-sm font-bold text-[#0F172A] dark:text-[#F8FAFC]">
+                      {exp.role}
+                    </h3>
+                    <p className="text-xs font-medium text-[#4A6B82] dark:text-[#8EB1D6]">
+                      {exp.company}
+                    </p>
+                  </div>
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-mono bg-[#EBF1F7] dark:bg-[#1A2536] text-[#475569] dark:text-[#94A3B8] border border-[#D5E2EE] dark:border-[#24354D]">
                     {exp.period}
                   </span>
                 </div>
-                <ul className="space-y-1.5 pl-1">
+
+                <ul className="space-y-1.5 pt-1">
                   {exp.points.map((pt, i) => (
-                    <li key={i} className="flex items-start gap-2 text-xs text-[#4B5563] dark:text-[#9CA3AF]">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#0D9488] shrink-0 mt-0.5" />
+                    <li key={i} className="flex items-start gap-2.5 text-xs text-[#475569] dark:text-[#94A3B8] leading-relaxed">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#4A6B82] dark:text-[#8EB1D6] shrink-0 mt-0.5" />
                       <span>{pt}</span>
                     </li>
                   ))}
                 </ul>
+
+                <div className="pt-2 border-t border-[#E2E8F0] dark:border-[#1E2638] flex flex-wrap gap-1.5">
+                  {exp.skills.map((s) => (
+                    <span
+                      key={s}
+                      className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#FFFFFF] dark:bg-[#121722] text-[#64748B] dark:text-[#94A3B8] border border-[#E2E8F0] dark:border-[#1E293B]"
+                    >
+                      {s}
+                    </span>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
 
           {/* Selected Projects */}
           <div className="space-y-4">
-            <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-[#111827] dark:text-[#F9FAFB] border-b border-[#E8E8E4] dark:border-[#1F2937] pb-1">
-              Selected Projects
-            </h2>
-            {projects.map((proj) => (
-              <div key={proj.title} className="space-y-1.5">
-                <div className="flex items-center justify-between gap-2 text-xs font-bold text-[#111827] dark:text-[#F9FAFB]">
-                  <span>{proj.title}</span>
-                  <a
-                    href={proj.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[11px] font-mono font-normal text-[#0D9488] hover:underline flex items-center gap-1 shrink-0"
-                  >
-                    <span>Link</span>
-                    <ExternalLink className="w-3 h-3" />
-                  </a>
+            <div className="flex items-center gap-2 pb-1.5 border-b border-[#E2E8F0] dark:border-[#1E2638]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#4A6B82] dark:bg-[#8EB1D6]" />
+              <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-[#0F172A] dark:text-[#F8FAFC]">
+                Selected Projects
+              </h2>
+            </div>
+
+            <div className="space-y-3">
+              {projects.map((proj) => (
+                <div key={proj.title} className="p-4 rounded-xl bg-[#F8FAFC] dark:bg-[#151C2A] border border-[#E2E8F0] dark:border-[#1E293B] space-y-2">
+                  <div className="flex items-center justify-between gap-2 text-xs font-bold text-[#0F172A] dark:text-[#F8FAFC]">
+                    <span className="text-xs font-semibold">{proj.title}</span>
+                    <a
+                      href={proj.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-mono text-[#4A6B82] dark:text-[#8EB1D6] bg-[#EBF1F7] dark:bg-[#1A2536] hover:bg-[#DFEAF4] dark:hover:bg-[#202E42] transition-colors shrink-0"
+                    >
+                      <span>Link</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </div>
+                  <ul className="space-y-1.5 pt-1">
+                    {proj.points.map((pt, i) => (
+                      <li key={i} className="flex items-start gap-2.5 text-xs text-[#475569] dark:text-[#94A3B8] leading-relaxed">
+                        <span className="text-[#4A6B82] dark:text-[#8EB1D6] font-bold mt-[-1px]">&bull;</span>
+                        <span>{pt}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul className="space-y-1 pl-1">
-                  {proj.points.map((pt, i) => (
-                    <li key={i} className="flex items-start gap-2 text-xs text-[#4B5563] dark:text-[#9CA3AF]">
-                      <span className="text-[#0D9488] font-bold">&bull;</span>
-                      <span>{pt}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           {/* Education */}
-          <div className="space-y-2">
-            <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-[#111827] dark:text-[#F9FAFB] border-b border-[#E8E8E4] dark:border-[#1F2937] pb-1">
-              Education
-            </h2>
-            <div className="flex flex-wrap items-center justify-between gap-1 text-xs">
-              <span className="font-bold text-[#111827] dark:text-[#F9FAFB]">
-                Bachelor of Science in Computer Science
-              </span>
-              <span className="font-mono text-[#6B7280] dark:text-[#9CA3AF] text-[11px]">
-                2022 &ndash; 2026
-              </span>
+          <div className="space-y-3">
+            <div className="flex items-center gap-2 pb-1.5 border-b border-[#E2E8F0] dark:border-[#1E2638]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#4A6B82] dark:bg-[#8EB1D6]" />
+              <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-[#0F172A] dark:text-[#F8FAFC]">
+                Education
+              </h2>
             </div>
-            <p className="text-xs text-[#4B5563] dark:text-[#9CA3AF]">
-              University of Management and Technology, Lahore
-            </p>
+
+            <div className="p-4 rounded-xl bg-[#F8FAFC] dark:bg-[#151C2A] border border-[#E2E8F0] dark:border-[#1E293B]">
+              <div className="flex flex-wrap items-center justify-between gap-1 text-xs">
+                <span className="font-bold text-[#0F172A] dark:text-[#F8FAFC]">
+                  {education.degree}
+                </span>
+                <span className="font-mono text-[#64748B] dark:text-[#94A3B8] text-[11px]">
+                  {education.period}
+                </span>
+              </div>
+              <p className="text-xs font-medium text-[#4A6B82] dark:text-[#8EB1D6] mt-0.5">
+                {education.institution}
+              </p>
+              <p className="text-xs text-[#64748B] dark:text-[#94A3B8] mt-2 pt-2 border-t border-[#E2E8F0] dark:border-[#1E2638] leading-relaxed">
+                {education.details}
+              </p>
+            </div>
           </div>
+
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }
-

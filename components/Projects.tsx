@@ -15,7 +15,6 @@ export default function Projects() {
       subtitle: "AI Knowledge Workspace",
       description:
         "An AI-powered knowledge workspace designed to help people learn, think, and remember by turning information from different sources into connected, searchable knowledge.",
-      isLive: true,
       link: "https://mindly.one/",
       linkText: "Visit Mindly ↗",
       tech: [
@@ -39,7 +38,6 @@ export default function Projects() {
       subtitle: "Understand any codebase like someone who built it explained it.",
       description:
         "An AI-powered GitHub repository assistant that lets developers ask questions about unfamiliar codebases and receive answers grounded in retrieved source code, with clickable file and line references.",
-      isLive: false,
       link: "https://github.com/UsamaAliK/RepoGuide",
       linkText: "View on GitHub ↗",
       tech: [
@@ -64,7 +62,6 @@ export default function Projects() {
       subtitle: "AI Teaching Assistant",
       description:
         "An AI teaching assistant that helps teachers work with course material, generate lesson plans, quizzes, assignments, explanations, and research-backed educational content.",
-      isLive: false,
       link: "https://github.com/UsamaAliK/TutorDesk",
       linkText: "View on GitHub ↗",
       tech: [
@@ -89,7 +86,6 @@ export default function Projects() {
       subtitle: "Hybrid Recommendation Engine",
       description:
         "A movie recommendation system exploring collaborative filtering, content-based similarity, and hybrid recommendation techniques using the MovieLens dataset.",
-      isLive: false,
       link: "https://github.com/UsamaAliK/Movie-Recomendation-System",
       linkText: "View on GitHub ↗",
       tech: [
@@ -111,7 +107,7 @@ export default function Projects() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className="max-w-2xl mb-12">
-          <span className="text-xs font-mono text-[#0D9488] tracking-wider uppercase font-semibold block mb-3">
+          <span className="text-xs font-mono text-[#0D9488] dark:text-[#5EEAD4] tracking-wider uppercase font-semibold block mb-3">
             03 / Selected Work
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#111827] dark:text-[#F9FAFB] mb-3">
@@ -127,24 +123,18 @@ export default function Projects() {
           {projects.map((project) => (
             <div
               key={project.id}
-              className={`group bg-white dark:bg-[#111827] border border-[#E8E8E4] dark:border-[#1F2937] rounded-xl p-6 sm:p-8 hover:border-[#0D9488]/50 transition-all duration-200 shadow-2xs hover:shadow-sm ${
-                project.featured ? "ring-1 ring-[#0D9488]/20 bg-linear-to-b from-white to-[#FBFBF9] dark:from-[#111827] dark:to-[#0B0F1A]" : ""
+              className={`group bg-white dark:bg-[#111827] border border-[#E8E8E4] dark:border-[#1F2937] rounded-xl p-6 sm:p-8 hover:border-[#0D9488]/50 dark:hover:border-[#5EEAD4]/50 transition-all duration-200 shadow-2xs hover:shadow-sm ${
+                project.featured ? "ring-1 ring-[#0D9488]/20 dark:ring-[#5EEAD4]/20 bg-linear-to-b from-white to-[#FBFBF9] dark:from-[#111827] dark:to-[#0B0F1A]" : ""
               }`}
             >
               <div className="flex flex-col lg:flex-row justify-between lg:items-start gap-6 mb-6">
                 <div className="space-y-2 max-w-2xl">
                   {/* Top Metadata row */}
                   <div className="flex items-center gap-3">
-                    <span className="text-xs font-mono font-bold text-[#6B7280] dark:text-[#9CA3AF] group-hover:text-[#0D9488] transition-colors">
+                    <span className="text-xs font-mono font-bold text-[#6B7280] dark:text-[#9CA3AF] group-hover:text-[#0D9488] dark:group-hover:text-[#5EEAD4] transition-colors">
                       {project.number}
                     </span>
                     <span className="text-[#D1D1CB] dark:text-[#374151]">•</span>
-                    {project.isLive && (
-                      <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#CCFBF1]/50 dark:bg-[#0D9488]/15 border border-[#99F6E4] dark:border-[#0D9488]/40 text-[10px] font-mono text-[#0F766E] dark:text-[#5EEAD4] font-medium">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#0D9488] animate-pulse" />
-                        Live Product
-                      </span>
-                    )}
                     <span className="text-xs font-mono text-[#9CA3AF] dark:text-[#6B7280]">
                       {project.subtitle}
                     </span>

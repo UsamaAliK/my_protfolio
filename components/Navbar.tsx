@@ -3,18 +3,19 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Github, Menu, X, ArrowUpRight, FileText } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
-  { name: "Work", href: "/#work" },
-  { name: "Experience", href: "/#experience" },
-  { name: "About", href: "/#about" },
-  { name: "Skills", href: "/#skills" },
-  { name: "Contact", href: "/#contact" },
+  { name: "Experience", id: "experience" },
+  { name: "Skills", id: "skills" },
+  { name: "Work", id: "work" },
+  { name: "Contact", id: "contact" },
 ];
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,15 +25,52 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const ids = navLinks.map((link) => link.id);
+    let frame = 0;
+
+    const update = () => {
+      frame = 0;
+      let current = "";
+      let bestTop = -Infinity;
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        const top = el.getBoundingClientRect().top - 140;
+        if (top <= 0 && top > bestTop) {
+          bestTop = top;
+          current = id;
+        }
+      }
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 2) {
+        current = ids[ids.length - 1];
+      }
+      setActiveSection(current);
+    };
+
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, []);
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 bg-transparent ${
         scrolled
-          ? "bg-[#FBFBF9]/85 dark:bg-[#0B0F1A]/85 backdrop-blur-md border-b border-[#E8E8E4]/80 dark:border-[#1F2937]/80 py-3 shadow-sm"
-          : "bg-[#FBFBF9]/60 dark:bg-[#0B0F1A]/60 backdrop-blur-sm py-4.5"
+          ? "border-b border-[#E8E8E4]/80 dark:border-[#1F2937]/80 py-3"
+          : "py-4.5"
       }`}
     >
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         {/* Brand with custom UA Logo */}
         <Link
           href="/"
@@ -58,8 +96,11 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <a
               key={link.name}
-              href={link.href}
-              className="hover:text-[#111827] dark:hover:text-[#F9FAFB] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#0D9488] hover:after:w-full after:transition-all after:duration-200"
+              href={`/#${link.id}`}
+              aria-current={activeSection === link.id ? "true" : undefined}
+              className={`hover:text-[#111827] dark:hover:text-[#F9FAFB] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#0D9488] hover:after:w-full after:transition-all after:duration-200 ${
+                activeSection === link.id ? "text-[#0D9488] after:w-full" : ""
+              }`}
             >
               {link.name}
             </a>
@@ -84,6 +125,8 @@ export default function Navbar() {
             <span>GitHub</span>
             <ArrowUpRight className="w-3 h-3 text-[#9CA3AF] dark:text-[#6B7280]" />
           </a>
+
+          <ThemeToggle />
         </nav>
 
         {/* Mobile menu button */}
@@ -103,6 +146,7 @@ export default function Navbar() {
           >
             <Github className="w-4 h-4" />
           </a>
+          <ThemeToggle />
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-1.5 rounded-md text-[#4B5563] dark:text-[#9CA3AF] hover:text-[#111827] dark:hover:text-[#F9FAFB] hover:bg-[#F4F4F0] dark:hover:bg-[#1F2937] transition-colors"
@@ -120,9 +164,14 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <a
                 key={link.name}
-                href={link.href}
+                href={`/#${link.id}`}
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-3 py-2 text-sm font-medium text-[#4B5563] dark:text-[#9CA3AF] hover:text-[#111827] dark:hover:text-[#F9FAFB] hover:bg-[#F4F4F0] dark:hover:bg-[#1F2937] rounded-md transition-colors"
+                aria-current={activeSection === link.id ? "true" : undefined}
+                className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                  activeSection === link.id
+                    ? "text-[#0D9488] bg-[#CCFBF1]/30 dark:bg-[#0D9488]/10"
+                    : "text-[#4B5563] dark:text-[#9CA3AF] hover:text-[#111827] dark:hover:text-[#F9FAFB] hover:bg-[#F4F4F0] dark:hover:bg-[#1F2937]"
+                }`}
               >
                 {link.name}
               </a>
