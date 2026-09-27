@@ -14,6 +14,7 @@
 
 # production
 /build
+/dist
 
 # debug
 npm-debug.log*
@@ -21,21 +22,54 @@ yarn-debug.log*
 lerna-debug.log*
 pnpm-debug.log*
 .pnpm-debug.log*
+*.log
+.eslintcache
 
-# local env files
+# env files (never commit real values)
 .env
-.env*.local
+.env.*
+!.env.example
 
 # vercel
 .vercel
+
+# keys, certs and credentials
 *.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+credentials.json
+service-account*.json
+secrets.json
+.npmrc
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
 
-# macOS
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# local databases and dumps
+*.sqlite
+*.sqlite3
+*.db
+*.sql
+dump.sql
+
+# editors and OS
 .DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
 
 # Build cache
 .swc/

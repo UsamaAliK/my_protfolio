@@ -48,6 +48,25 @@ const config: Config = {
           "monospace",
         ],
       },
+      keyframes: {
+        wave: {
+          "0%, 60%, 100%": { transform: "rotate(0deg)" },
+          "10%": { transform: "rotate(16deg)" },
+          "20%": { transform: "rotate(-10deg)" },
+          "30%": { transform: "rotate(16deg)" },
+          "40%": { transform: "rotate(-6deg)" },
+          "50%": { transform: "rotate(12deg)" },
+        },
+        halo: {
+          "0%": { transform: "scale(1)", opacity: "0.5" },
+          "70%, 100%": { transform: "scale(1.7)", opacity: "0" },
+        },
+      },
+      animation: {
+        wave: "wave 2.6s ease-in-out infinite",
+        "wave-slow": "wave 3.4s ease-in-out infinite",
+        halo: "halo 2.8s ease-out infinite",
+      },
     },
   },
   plugins: [],

@@ -86,3 +86,11 @@
   background-color: rgba(13, 148, 136, 0.3);
   color: #5EEAD4;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-wave,
+  .animate-wave-slow,
+  .animate-halo {
+    animation: none !important;
+  }
+}
