@@ -6,6 +6,7 @@ import {
   Bot,
   RotateCcw,
   Send,
+  Sparkles,
   User,
   X,
 } from "lucide-react";
@@ -142,26 +143,12 @@ export default function Chatbot() {
         onClick={() => setOpen((value) => !value)}
         aria-label={open ? "Close chat assistant" : "Open chat assistant"}
         aria-expanded={open}
-        className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 flex items-center gap-2.5 h-12 pl-4 pr-5 rounded-full bg-[#0D9488] hover:bg-[#0F766E] text-white text-xs font-semibold tracking-wide shadow-lg shadow-[#0D9488]/25 transition-all hover:shadow-xl hover:shadow-[#0D9488]/30 active:scale-95 cursor-pointer group"
+        className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 flex items-center gap-2.5 h-12 pl-4 pr-5 rounded-full bg-[#0D9488] hover:bg-[#0F766E] text-white text-xs font-semibold tracking-wide shadow-lg shadow-[#0D9488]/25 transition-all hover:shadow-xl hover:shadow-[#0D9488]/30 active:scale-95 cursor-pointer"
       >
         {open ? (
           <X className="w-5 h-5" />
         ) : (
-          <>
-            {!open && (
-              <span
-                aria-hidden="true"
-                className="absolute inset-0 rounded-full bg-[#0D9488] animate-halo group-hover:opacity-0 transition-opacity"
-              />
-            )}
-            <span
-              aria-hidden="true"
-              className="text-[17px] leading-none animate-wave group-hover:animate-wave-slow origin-[70%_85%] select-none"
-              style={{ display: "inline-block" }}
-            >
-              👋
-            </span>
-          </>
+          <Sparkles className="w-4 h-4 text-[#CCFBF1]" />
         )}
         <span className="hidden sm:inline">{open ? "Close" : "Ask about me"}</span>
         {!open && unread > 0 && (
