@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col justify-between bg-[#FBFBF9] dark:bg-[#0B0F1A] text-[#111827] dark:text-[#F9FAFB]">
       <Navbar />
-      <main className="flex-grow">
+      <main className="relative z-10 flex-grow">
         <Hero />
         <Experience />
         <Skills />

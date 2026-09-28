@@ -84,7 +84,7 @@ export default function ResumePage() {
     <div className="min-h-screen flex flex-col justify-between bg-[#F8F9FA] dark:bg-[#0B0F19] text-[#1E293B] dark:text-[#F1F5F9] transition-colors">
       <Navbar />
 
-      <main className="flex-grow max-w-4xl w-full mx-auto px-4 sm:px-6 pt-28 pb-20">
+      <main className="relative z-10 flex-grow max-w-4xl w-full mx-auto px-4 sm:px-6 pt-28 pb-20">
         {/* Navigation back and Download Resume header */}
         <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-[#E2E8F0] dark:border-[#1E293B]">
           <Link
