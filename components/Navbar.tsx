@@ -16,13 +16,30 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("");
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => {
+    let frame = 0;
+
+    const update = () => {
+      frame = 0;
       setScrolled(window.scrollY > 20);
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0);
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
   }, []);
 
   useEffect(() => {
@@ -70,6 +87,11 @@ export default function Navbar() {
           : "py-4.5"
       }`}
     >
+      <div
+        aria-hidden="true"
+        className="absolute bottom-0 left-0 h-[2px] w-full origin-left bg-[#0D9488] dark:bg-[#5EEAD4] transition-opacity duration-300"
+        style={{ transform: `scaleX(${progress})`, opacity: progress > 0.001 ? 1 : 0 }}
+      />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         {/* Brand with custom UA Logo */}
         <Link
@@ -159,7 +181,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-[#E8E8E4] dark:border-[#1F2937] bg-[#FBFBF9] dark:bg-[#0B0F1A] px-4 pt-3 pb-6 space-y-3">
+        <div className="menu-enter md:hidden border-b border-[#E8E8E4] dark:border-[#1F2937] bg-[#FBFBF9] dark:bg-[#0B0F1A] px-4 pt-3 pb-6 space-y-3">
           <div className="flex flex-col space-y-2">
             {navLinks.map((link) => (
               <a

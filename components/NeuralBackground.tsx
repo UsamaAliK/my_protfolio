@@ -2,12 +2,9 @@
 
 import { useEffect, useRef } from "react";
 
-const LINK_DISTANCE = 148;
-const MOUSE_RADIUS = 190;
 const REPEL_STRENGTH = 46;
 const NODE_AREA = 15500;
 const MIN_NODES = 30;
-const MAX_NODES = 132;
 const MAX_SPEED = 22;
 
 interface Node {
@@ -25,14 +22,24 @@ interface Palette {
   link: string;
   nodeAlpha: number;
   lineAlpha: number;
+  linkAlpha: number;
+  linkDistance: number;
+  lineWidth: number;
+  maxNodes: number;
+  mouseRadius: number;
 }
 
 const LIGHT: Palette = {
   node: "#0D9488",
   line: "#0D9488",
   link: "#0F766E",
-  nodeAlpha: 0.5,
-  lineAlpha: 0.16,
+  nodeAlpha: 0.28,
+  lineAlpha: 0.075,
+  linkAlpha: 0.1,
+  linkDistance: 124,
+  lineWidth: 0.75,
+  maxNodes: 56,
+  mouseRadius: 165,
 };
 
 const DARK: Palette = {
@@ -41,6 +48,11 @@ const DARK: Palette = {
   link: "#5EEAD4",
   nodeAlpha: 0.4,
   lineAlpha: 0.13,
+  linkAlpha: 0.22,
+  linkDistance: 148,
+  lineWidth: 1,
+  maxNodes: 132,
+  mouseRadius: 190,
 };
 
 function random(min: number, max: number) {
@@ -68,10 +80,11 @@ export default function NeuralBackground() {
     let lastTime = 0;
 
     const mouse = { x: -9999, y: -9999, active: false };
+    let alphaScale = 1;
 
     const seed = () => {
       const count = Math.round((width * height) / NODE_AREA);
-      const total = Math.min(MAX_NODES, Math.max(MIN_NODES, count));
+      const total = Math.min(palette.maxNodes, Math.max(MIN_NODES, count));
       nodes = Array.from({ length: total }, () => ({
         x: random(0, width),
         y: random(0, height),
@@ -99,6 +112,12 @@ export default function NeuralBackground() {
       const delta = lastTime ? Math.min((time - lastTime) / 16.67, 3) : 1;
       lastTime = time;
 
+      if (!reduceMotion) {
+        const fadeZone = window.innerHeight * 0.8;
+        const target = 1 - 0.6 * Math.min(1, Math.max(0, window.scrollY / fadeZone));
+        alphaScale += (target - alphaScale) * Math.min(1, 0.08 * delta);
+      }
+
       ctx.clearRect(0, 0, width, height);
 
       for (const node of nodes) {
@@ -111,9 +130,9 @@ export default function NeuralBackground() {
             const dx = node.x - mouse.x;
             const dy = node.y - mouse.y;
             const distSq = dx * dx + dy * dy;
-            if (distSq < MOUSE_RADIUS * MOUSE_RADIUS && distSq > 0.01) {
+            if (distSq < palette.mouseRadius * palette.mouseRadius && distSq > 0.01) {
               const dist = Math.sqrt(distSq);
-              const force = (1 - dist / MOUSE_RADIUS) ** 2 * REPEL_STRENGTH;
+              const force = (1 - dist / palette.mouseRadius) ** 2 * REPEL_STRENGTH;
               node.vx += (dx / dist) * force * 0.016 * delta;
               node.vy += (dy / dist) * force * 0.016 * delta;
             }
@@ -139,17 +158,18 @@ export default function NeuralBackground() {
         }
       }
 
-      ctx.lineWidth = 1;
+      ctx.lineWidth = palette.lineWidth;
       for (let i = 0; i < nodes.length; i += 1) {
         const a = nodes[i];
         for (let j = i + 1; j < nodes.length; j += 1) {
           const b = nodes[j];
           const dx = a.x - b.x;
           const dy = a.y - b.y;
-          if (Math.abs(dx) > LINK_DISTANCE || Math.abs(dy) > LINK_DISTANCE) continue;
+          const reach = palette.linkDistance;
+          if (Math.abs(dx) > reach || Math.abs(dy) > reach) continue;
           const dist = Math.hypot(dx, dy);
-          if (dist > LINK_DISTANCE) continue;
-          const alpha = (1 - dist / LINK_DISTANCE) * palette.lineAlpha;
+          if (dist > reach) continue;
+          const alpha = (1 - dist / reach) * palette.lineAlpha * alphaScale;
           ctx.strokeStyle = palette.line;
           ctx.globalAlpha = alpha;
           ctx.beginPath();
@@ -162,11 +182,11 @@ export default function NeuralBackground() {
       if (mouse.active) {
         for (const node of nodes) {
           const dist = Math.hypot(node.x - mouse.x, node.y - mouse.y);
-          if (dist > MOUSE_RADIUS) continue;
-          const alpha = (1 - dist / MOUSE_RADIUS) ** 2 * 0.22;
+          if (dist > palette.mouseRadius) continue;
+          const alpha = (1 - dist / palette.mouseRadius) ** 2 * palette.linkAlpha * alphaScale;
           ctx.strokeStyle = palette.link;
           ctx.globalAlpha = alpha;
-          ctx.lineWidth = 0.8;
+          ctx.lineWidth = palette.lineWidth * 0.8;
           ctx.beginPath();
           ctx.moveTo(mouse.x, mouse.y);
           ctx.lineTo(node.x, node.y);
@@ -177,7 +197,7 @@ export default function NeuralBackground() {
       ctx.globalAlpha = 1;
       ctx.fillStyle = palette.node;
       for (const node of nodes) {
-        ctx.globalAlpha = palette.nodeAlpha;
+        ctx.globalAlpha = palette.nodeAlpha * alphaScale;
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.r, 0, Math.PI * 2);
         ctx.fill();
@@ -212,12 +232,17 @@ export default function NeuralBackground() {
       }
     };
 
-    const observer = new MutationObserver(() => {
-      palette = isDark() ? DARK : LIGHT;
-    });
+    const applyPalette = () => {
+      const next = isDark() ? DARK : LIGHT;
+      if (next === palette) return;
+      palette = next;
+      seed();
+    };
 
-    resize();
+    const observer = new MutationObserver(applyPalette);
+
     palette = isDark() ? DARK : LIGHT;
+    resize();
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
 
     if (reduceMotion) {
