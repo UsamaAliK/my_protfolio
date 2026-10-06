@@ -73,7 +73,7 @@ export const RESUME: Resume = {
         "Built automation workflows using N8N to streamline recurring development tasks.",
         "Collaborated with team members to communicate requirements and support GenAI development activities.",
       ],
-      stack: ["GenAI Workflows", "LLM APIs", "N8N Automation", "Python", "API Integration"],
+      stack: ["GenAI Workflows", "LLM APIs", "N8N", "Python", "API Integration"],
     },
   ],
   projects: [
@@ -81,11 +81,10 @@ export const RESUME: Resume = {
       title: "RepoGuide — AI-Powered Codebase Q&A",
       link: "https://github.com/UsamaAliK/RepoGuide",
       summary:
-        "Analyzes GitHub repositories and answers questions about their codebase using retrieval-augmented generation.",
+        "Analyzes GitHub repositories and provides context-aware answers about their codebase using RAG.",
       highlights: [
         "Built repository ingestion, code-aware chunking, embeddings, semantic search, and reranking using Python, FastAPI, ChromaDB, Gemini, Jina AI, and LangChain.",
-        "Implemented PostgreSQL persistence with SQLAlchemy and Alembic migrations for users, repositories, conversations, and messages.",
-        "Keeps answers grounded in the actual source of the ingested repository instead of general model knowledge.",
+        "Implemented PostgreSQL persistence using SQLAlchemy and Alembic migrations for users, repositories, conversations, and messages.",
       ],
       stack: ["Python", "FastAPI", "RAG", "LangChain", "ChromaDB", "Gemini", "Jina AI", "PostgreSQL", "SQLAlchemy", "Alembic"],
     },
@@ -93,7 +92,7 @@ export const RESUME: Resume = {
       title: "Mindly — Knowledge-Based Learning System",
       link: "https://mindly.one/",
       summary:
-        "A knowledge-based AI system that gives context-aware answers grounded in the user's own material.",
+        "A knowledge-based AI system using RAG, embeddings, and LLM APIs for context-aware responses.",
       highlights: [
         "Built a knowledge-based AI system using RAG, embeddings, and LLM APIs for context-aware responses.",
         "Implemented document ingestion and semantic retrieval using Python, Next.js, and pgvector.",
@@ -104,7 +103,7 @@ export const RESUME: Resume = {
       title: "Movie Recommendation System",
       link: "https://github.com/UsamaAliK/Movie-Recomendation-System",
       summary:
-        "A collaborative filtering recommender that learns user preferences from interaction data.",
+        "A collaborative filtering movie recommendation system using Singular Value Decomposition (SVD).",
       highlights: [
         "Built a collaborative filtering movie recommendation system using Singular Value Decomposition (SVD).",
         "Implemented data preprocessing, model training, and recommendation generation using Python, Scikit-learn, and Surprise.",
@@ -115,22 +114,11 @@ export const RESUME: Resume = {
   skills: [
     {
       category: "Programming Languages",
-      items: ["Python", "SQL", "C++"],
+      items: ["Python"],
     },
     {
       category: "AI & Machine Learning",
-      items: [
-        "RAG Pipelines",
-        "LLM APIs",
-        "Embeddings",
-        "LangChain",
-        "LangGraph",
-        "PyTorch",
-        "TensorFlow",
-        "Scikit-learn",
-        "AI Agents",
-        "Tool Calling",
-      ],
+      items: ["RAG", "LLM APIs", "Embeddings", "LangChain", "PyTorch", "TensorFlow"],
     },
     {
       category: "Backend & Security",
@@ -138,16 +126,16 @@ export const RESUME: Resume = {
     },
     {
       category: "Databases & Vector Search",
-      items: ["PostgreSQL", "SQLite", "pgvector", "ChromaDB", "FAISS", "Semantic Search", "Reranking"],
+      items: ["PostgreSQL", "SQLite", "pgvector", "ChromaDB", "FAISS"],
     },
     {
-      category: "Frontend & Tools",
-      items: ["Next.js", "Pandas", "NumPy", "Git", "GitHub API", "N8N"],
+      category: "Tools & Automation",
+      items: ["Pandas", "NumPy", "Git", "GitHub API", "N8N"],
     },
   ],
   education: {
     degree: "Bachelor of Science in Computer Science",
-    institution: "University of Management and Technology (UMT), Lahore",
+    institution: "University of Management and Technology, Lahore",
     period: "2022 – 2026",
     details:
       "Coursework covering machine learning, data structures, algorithms, database systems, and software architecture.",
