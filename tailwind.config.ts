@@ -10,24 +10,24 @@ const config: Config = {
     extend: {
       colors: {
         bg: {
-          light: "#FAF9F6",
+          light: "#FBFBF9",
           card: "#FFFFFF",
-          muted: "#F1F0EB",
+          muted: "#F4F4F0",
         },
         border: {
-          light: "#E4E4DC",
-          subtle: "#F0F0EB",
+          light: "#E8E8E4",
+          subtle: "#E8E8E4",
         },
         text: {
-          main: "#222923",
-          muted: "#59645D",
-          subtle: "#818980",
+          main: "#111827",
+          muted: "#4B5563",
+          subtle: "#9CA3AF",
         },
         accent: {
-          DEFAULT: "#38685A", // forest green
-          hover: "#2D5549",
-          light: "#E6F0E8",
-          border: "#B8CFBE",
+          DEFAULT: "#0D9488",
+          hover: "#0F766E",
+          light: "#CCFBF1",
+          border: "#5EEAD4",
         },
       },
       fontFamily: {

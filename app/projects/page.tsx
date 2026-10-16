@@ -179,16 +179,16 @@ export default function ProjectsPage() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-[#FAF9F6] dark:bg-[#121815] text-[#222923] dark:text-[#EEF2EC]">
+    <div className="min-h-screen flex flex-col justify-between bg-[#FBFBF9] dark:bg-[#0B0F1A] text-[#111827] dark:text-[#F9FAFB]">
       <Navbar fixed={false} />
 
       <main className="flex-grow pt-4 pb-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           {/* Header navigation & title */}
-          <div className="mb-10 pb-6 border-b border-[#E4E4DC] dark:border-[#2B3830]">
+          <div className="mb-10 pb-6 border-b border-[#E8E8E4] dark:border-[#1F2937]">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-xs font-mono text-[#59645D] dark:text-[#B3BDB5] hover:text-[#38685A] dark:hover:text-[#9AC7A7] transition-colors mb-6 group"
+              className="inline-flex items-center gap-2 text-xs font-mono text-[#4B5563] dark:text-[#9CA3AF] hover:text-[#0D9488] dark:hover:text-[#5EEAD4] transition-colors mb-6 group"
             >
               <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 motion-reduce:transform-none transition-transform" />
               <span>Back to Portfolio Home</span>
@@ -196,18 +196,18 @@ export default function ProjectsPage() {
 
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div>
-                <span className="text-xs font-mono text-[#38685A] dark:text-[#9AC7A7] tracking-wider uppercase font-semibold block mb-2">
+                <span className="text-xs font-mono text-[#0D9488] dark:text-[#5EEAD4] tracking-wider uppercase font-semibold block mb-2">
                   Projects
                 </span>
-                <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#222923] dark:text-[#EEF2EC]">
+                <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#111827] dark:text-[#F9FAFB]">
                   Selected projects
                 </h1>
-                <p className="text-sm sm:text-base text-[#59645D] dark:text-[#B3BDB5] mt-2 max-w-2xl leading-relaxed">
+                <p className="text-sm sm:text-base text-[#4B5563] dark:text-[#9CA3AF] mt-2 max-w-2xl leading-relaxed">
                   A closer look at what each project does, the tools behind it, and where to find the code.
                 </p>
               </div>
 
-              <div className="shrink-0 text-xs font-mono text-[#59645D] dark:text-[#B3BDB5]">
+              <div className="shrink-0 text-xs font-mono text-[#4B5563] dark:text-[#9CA3AF]">
                 <span>4 projects</span>
               </div>
             </div>
@@ -215,10 +215,10 @@ export default function ProjectsPage() {
 
           <nav
             aria-label="Jump to project"
-            className="sticky top-0 z-40 -mx-4 sm:-mx-6 px-4 sm:px-6 py-3 mb-10 border-y border-[#E4E4DC]/80 dark:border-[#2B3830]/80 bg-[#FAF9F6]/95 dark:bg-[#121815]/95 backdrop-blur-sm"
+            className="sticky top-0 z-40 -mx-4 sm:-mx-6 px-4 sm:px-6 py-3 mb-10 border-y border-[#E8E8E4]/80 dark:border-[#1F2937]/80 bg-[#FBFBF9]/95 dark:bg-[#0B0F1A]/95 backdrop-blur-sm"
           >
             <div className="flex items-center justify-between gap-3 overflow-x-auto no-scrollbar">
-              <span className="text-[11px] font-mono text-[#818980] dark:text-[#87948A] shrink-0 uppercase">
+              <span className="text-[11px] font-mono text-[#9CA3AF] dark:text-[#6B7280] shrink-0 uppercase">
                 Jump to:
               </span>
               <div className="flex items-center gap-2 shrink-0">
@@ -230,8 +230,8 @@ export default function ProjectsPage() {
                     onClick={() => setActiveId(p.id)}
                     className={`px-3 py-1 rounded-lg text-xs font-mono transition-all flex items-center gap-1.5 ${
                       activeId === p.id
-                        ? "bg-[#38685A] text-white font-semibold shadow-2xs"
-                        : "bg-white dark:bg-[#1B2420] border border-[#E4E4DC] dark:border-[#2B3830] text-[#59645D] dark:text-[#B3BDB5] hover:text-[#222923] dark:hover:text-[#EEF2EC]"
+                        ? "bg-[#0D9488] text-white font-semibold shadow-2xs"
+                        : "bg-white dark:bg-[#111827] border border-[#E8E8E4] dark:border-[#1F2937] text-[#4B5563] dark:text-[#9CA3AF] hover:text-[#111827] dark:hover:text-[#F9FAFB]"
                     }`}
                   >
                     <span>{p.number}</span>
@@ -252,9 +252,9 @@ export default function ProjectsPage() {
               >
                 <Reveal delay={100}>
                   <div
-                    className={`group bg-white dark:bg-[#1B2420] border border-[#E4E4DC] dark:border-[#2B3830] rounded-2xl p-6 sm:p-10 transition-all duration-300 shadow-sm hover:shadow-xl hover:border-[#38685A]/50 dark:hover:border-[#9AC7A7]/50 hover:-translate-y-1 motion-reduce:transform-none motion-reduce:transition-none ${
+                    className={`group bg-white dark:bg-[#111827] border border-[#E8E8E4] dark:border-[#1F2937] rounded-2xl p-6 sm:p-10 transition-all duration-300 shadow-sm hover:shadow-xl hover:border-[#0D9488]/50 dark:hover:border-[#5EEAD4]/50 hover:-translate-y-1 motion-reduce:transform-none motion-reduce:transition-none ${
                       project.featured
-                        ? "ring-1 ring-[#38685A]/20 dark:ring-[#9AC7A7]/20 bg-linear-to-b from-white to-[#FAF9F6] dark:from-[#1B2420] dark:to-[#121815]"
+                        ? "ring-1 ring-[#0D9488]/20 dark:ring-[#5EEAD4]/20 bg-linear-to-b from-white to-[#FBFBF9] dark:from-[#111827] dark:to-[#0B0F1A]"
                         : ""
                     }`}
                   >
@@ -262,24 +262,24 @@ export default function ProjectsPage() {
                     <div className="flex flex-col lg:flex-row justify-between lg:items-start gap-6 mb-6">
                       <div className="space-y-2 max-w-2xl">
                         <div className="flex items-center gap-2.5">
-                          <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-[#E6F0E8] dark:bg-[#38685A]/20 text-[#38685A] dark:text-[#9AC7A7] text-xs font-mono font-bold">
+                          <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-[#CCFBF1] dark:bg-[#0D9488]/20 text-[#0D9488] dark:text-[#5EEAD4] text-xs font-mono font-bold">
                             {project.number}
                           </span>
-                          <span className="text-[#D3D5CC] dark:text-[#39483D]">•</span>
-                          <span className="text-xs font-mono text-[#38685A] dark:text-[#9AC7A7] font-semibold">
+                          <span className="text-[#D1D1CB] dark:text-[#374151]">•</span>
+                          <span className="text-xs font-mono text-[#0D9488] dark:text-[#5EEAD4] font-semibold">
                             {project.badge}
                           </span>
                         </div>
 
-                        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#222923] dark:text-[#EEF2EC]">
+                        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#111827] dark:text-[#F9FAFB]">
                           {project.title}
                         </h2>
 
-                        <p className="text-xs sm:text-sm font-mono text-[#59645D] dark:text-[#B3BDB5]">
+                        <p className="text-xs sm:text-sm font-mono text-[#4B5563] dark:text-[#9CA3AF]">
                           {project.subtitle}
                         </p>
 
-                        <p className="text-sm text-[#59645D] dark:text-[#CBD5E1] leading-relaxed pt-2">
+                        <p className="text-sm text-[#4B5563] dark:text-[#CBD5E1] leading-relaxed pt-2">
                           {project.longDescription || project.description}
                         </p>
                       </div>
@@ -290,7 +290,7 @@ export default function ProjectsPage() {
                           href={project.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#38685A] hover:bg-[#2D5549] text-white text-xs font-semibold tracking-wide transition-all shadow-sm group/btn hover:scale-105 active:scale-95"
+                          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#0D9488] hover:bg-[#0F766E] text-white text-xs font-semibold tracking-wide transition-all shadow-sm group/btn hover:scale-105 active:scale-95"
                         >
                           <span>{project.linkText}</span>
                           <ArrowUpRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 motion-reduce:transform-none transition-transform" />
@@ -299,23 +299,23 @@ export default function ProjectsPage() {
                     </div>
 
                     {/* Architecture Visual / Live Webpage */}
-                    <div className="my-8 rounded-xl overflow-hidden border border-[#E4E4DC]/80 dark:border-[#2B3830]/80 shadow-xs">
+                    <div className="my-8 rounded-xl overflow-hidden border border-[#E8E8E4]/80 dark:border-[#1F2937]/80 shadow-xs">
                       {project.visual}
                     </div>
 
                     {/* Technical Features & Capabilities */}
                     {project.features && (
-                      <div className="my-6 pt-6 border-t border-[#E4E4DC]/60 dark:border-[#2B3830]/60 space-y-3">
-                        <span className="text-xs font-mono uppercase tracking-wider text-[#818980] dark:text-[#87948A] block font-semibold">
+                      <div className="my-6 pt-6 border-t border-[#E8E8E4]/60 dark:border-[#1F2937]/60 space-y-3">
+                        <span className="text-xs font-mono uppercase tracking-wider text-[#9CA3AF] dark:text-[#6B7280] block font-semibold">
                           Engineering Highlights
                         </span>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                           {project.features.map((feat, i) => (
                             <div
                               key={i}
-                              className="p-3 rounded-lg bg-[#FAF9F6] dark:bg-[#151C2C] border border-[#E4E4DC] dark:border-[#2B3830] flex items-start gap-2.5 text-xs text-[#334155] dark:text-[#CBD5E1]"
+                              className="p-3 rounded-lg bg-[#FBFBF9] dark:bg-[#151C2C] border border-[#E8E8E4] dark:border-[#1F2937] flex items-start gap-2.5 text-xs text-[#334155] dark:text-[#CBD5E1]"
                             >
-                              <CheckCircle2 className="w-4 h-4 text-[#38685A] dark:text-[#9AC7A7] shrink-0 mt-0.5" />
+                              <CheckCircle2 className="w-4 h-4 text-[#0D9488] dark:text-[#5EEAD4] shrink-0 mt-0.5" />
                               <span>{feat}</span>
                             </div>
                           ))}
@@ -324,15 +324,15 @@ export default function ProjectsPage() {
                     )}
 
                     {/* Tech Stack Tags */}
-                    <div className="pt-4 border-t border-[#E4E4DC]/60 dark:border-[#2B3830]/60 flex flex-wrap gap-1.5 items-center justify-between">
+                    <div className="pt-4 border-t border-[#E8E8E4]/60 dark:border-[#1F2937]/60 flex flex-wrap gap-1.5 items-center justify-between">
                       <div className="flex flex-wrap gap-1.5 items-center">
-                        <span className="text-[11px] font-mono text-[#818980] dark:text-[#87948A] mr-2">
+                        <span className="text-[11px] font-mono text-[#9CA3AF] dark:text-[#6B7280] mr-2">
                           Tech Stack:
                         </span>
                         {project.tech.map((t) => (
                           <span
                             key={t}
-                            className="px-2.5 py-0.5 rounded bg-[#FAF9F6] dark:bg-[#232E28] border border-[#E4E4DC] dark:border-[#39483D] text-[11px] font-mono text-[#59645D] dark:text-[#B3BDB5]"
+                            className="px-2.5 py-0.5 rounded bg-[#FBFBF9] dark:bg-[#1F2937] border border-[#E8E8E4] dark:border-[#374151] text-[11px] font-mono text-[#4B5563] dark:text-[#9CA3AF]"
                           >
                             {t}
                           </span>
@@ -343,7 +343,7 @@ export default function ProjectsPage() {
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xs font-mono text-[#38685A] dark:text-[#9AC7A7] flex items-center gap-1 mt-2 sm:mt-0 font-medium hover:underline"
+                        className="text-xs font-mono text-[#0D9488] dark:text-[#5EEAD4] flex items-center gap-1 mt-2 sm:mt-0 font-medium hover:underline"
                       >
                         <span>Open Source / Live URL</span>
                         <ExternalLink className="w-3.5 h-3.5" />
@@ -356,10 +356,10 @@ export default function ProjectsPage() {
           </div>
 
           {/* Bottom Navigation */}
-          <div className="mt-20 pt-8 border-t border-[#E4E4DC] dark:border-[#2B3830] flex flex-wrap items-center justify-between gap-4">
+          <div className="mt-20 pt-8 border-t border-[#E8E8E4] dark:border-[#1F2937] flex flex-wrap items-center justify-between gap-4">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-xs font-mono text-[#59645D] dark:text-[#B3BDB5] hover:text-[#38685A] dark:hover:text-[#9AC7A7] transition-colors"
+              className="inline-flex items-center gap-2 text-xs font-mono text-[#4B5563] dark:text-[#9CA3AF] hover:text-[#0D9488] dark:hover:text-[#5EEAD4] transition-colors"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>Back to Portfolio Home</span>
@@ -367,7 +367,7 @@ export default function ProjectsPage() {
 
             <Link
               href="/resume"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#222923] dark:bg-[#EEF2EC] text-white dark:text-[#222923] text-xs font-semibold shadow-xs hover:bg-[#232E28] dark:hover:bg-[#E5E7EB] transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#111827] dark:bg-[#F9FAFB] text-white dark:text-[#111827] text-xs font-semibold shadow-xs hover:bg-[#1F2937] dark:hover:bg-[#E5E7EB] transition-colors"
             >
               <span>View Resume Page</span>
               <ArrowUpRight className="w-3.5 h-3.5" />

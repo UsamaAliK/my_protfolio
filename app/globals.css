@@ -4,29 +4,29 @@
 
 @layer base {
   :root {
-    --bg-main: #FAF9F6;
+    --bg-main: #FBFBF9;
     --bg-card: #FFFFFF;
-    --bg-subtle: #F1F0EB;
-    --text-main: #222923;
-    --text-muted: #59645D;
-    --text-subtle: #818980;
-    --border-main: #E4E4DC;
-    --border-hover: #D3D5CC;
-    --accent-main: #38685A;
-    --accent-subtle: #E6F0E8;
+    --bg-subtle: #F4F4F0;
+    --text-main: #111827;
+    --text-muted: #4B5563;
+    --text-subtle: #9CA3AF;
+    --border-main: #E8E8E4;
+    --border-hover: #D1D1CB;
+    --accent-main: #0D9488;
+    --accent-subtle: #CCFBF1;
   }
 
   .dark {
-    --bg-main: #121815;
-    --bg-card: #1B2420;
-    --bg-subtle: #232E28;
-    --text-main: #EEF2EC;
-    --text-muted: #B3BDB5;
-    --text-subtle: #87948A;
-    --border-main: #2B3830;
-    --border-hover: #39483D;
-    --accent-main: #9AC7A7;
-    --accent-subtle: #9AC7A7;
+    --bg-main: #0B0F1A;
+    --bg-card: #111827;
+    --bg-subtle: #1F2937;
+    --text-main: #F9FAFB;
+    --text-muted: #9CA3AF;
+    --text-subtle: #6B7280;
+    --border-main: #1F2937;
+    --border-hover: #374151;
+    --accent-main: #0D9488;
+    --accent-subtle: #0D9488;
   }
 
   html {
@@ -125,37 +125,37 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #FAF9F6;
+  background: #FBFBF9;
 }
 .dark ::-webkit-scrollbar-track {
-  background: #121815;
+  background: #0B0F1A;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D3D5CC;
+  background: #D1D1CB;
   border-radius: 4px;
 }
 .dark ::-webkit-scrollbar-thumb {
-  background: #39483D;
+  background: #374151;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #818980;
+  background: #9CA3AF;
 }
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: #59645D;
+  background: #4B5563;
 }
 
 /* Focus styles for keyboard accessibility */
 *:focus-visible {
-  outline: 2px solid #38685A;
+  outline: 2px solid #0D9488;
   outline-offset: 2px;
 }
 
 /* Restrained selection styling */
 ::selection {
-  background-color: #E6F0E8;
-  color: #38685A;
+  background-color: #CCFBF1;
+  color: #0D9488;
 }
 .dark ::selection {
-  background-color: rgba(154, 199, 167, 0.22);
-  color: #9AC7A7;
+  background-color: rgba(13, 148, 136, 0.3);
+  color: #5EEAD4;
 }

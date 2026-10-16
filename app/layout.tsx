@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import Chatbot from "@/components/Chatbot";
+import NeuralBackground from "@/components/NeuralBackground";
 import "./globals.css";
 
 const inter = Inter({
@@ -74,7 +75,8 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="font-sans antialiased text-[#222923] dark:text-[#EEF2EC] bg-[#FAF9F6] dark:bg-[#121815] selection:bg-[#E6F0E8] selection:text-[#38685A] dark:selection:bg-[#38685A]/30 dark:selection:text-[#9AC7A7]">
+      <body className="font-sans antialiased text-[#111827] dark:text-[#F9FAFB] bg-[#FBFBF9] dark:bg-[#0B0F1A] selection:bg-[#CCFBF1] selection:text-[#0D9488] dark:selection:bg-[#0D9488]/30 dark:selection:text-[#5EEAD4]">
+        <NeuralBackground />
         {children}
         <Chatbot />
       </body>

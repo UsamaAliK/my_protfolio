@@ -30,9 +30,9 @@ interface Palette {
 }
 
 const LIGHT: Palette = {
-  node: "#38685A",
-  line: "#38685A",
-  link: "#38685A",
+  node: "#0D9488",
+  line: "#0D9488",
+  link: "#0D9488",
   nodeAlpha: 0.28,
   lineAlpha: 0.075,
   linkAlpha: 0.1,
@@ -43,9 +43,9 @@ const LIGHT: Palette = {
 };
 
 const DARK: Palette = {
-  node: "#9AC7A7",
-  line: "#9AC7A7",
-  link: "#9AC7A7",
+  node: "#5EEAD4",
+  line: "#5EEAD4",
+  link: "#5EEAD4",
   nodeAlpha: 0.4,
   lineAlpha: 0.13,
   linkAlpha: 0.22,

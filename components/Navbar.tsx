@@ -83,22 +83,22 @@ export default function Navbar({ fixed = true }: { fixed?: boolean }) {
     <header
       className={`${fixed ? "fixed top-0 left-0 right-0" : "relative"} z-50 transition-all duration-200 bg-transparent ${
         scrolled && fixed
-          ? "border-b border-[#E4E4DC]/80 dark:border-[#2B3830]/80 py-3"
+          ? "border-b border-[#E8E8E4]/80 dark:border-[#1F2937]/80 py-3"
           : "py-4.5"
       }`}
     >
       <div
         aria-hidden="true"
-        className="absolute bottom-0 left-0 h-[2px] w-full origin-left bg-[#38685A] dark:bg-[#9AC7A7] transition-opacity duration-300"
+        className="absolute bottom-0 left-0 h-[2px] w-full origin-left bg-[#0D9488] dark:bg-[#5EEAD4] transition-opacity duration-300"
         style={{ transform: `scaleX(${progress})`, opacity: progress > 0.001 ? 1 : 0 }}
       />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         {/* Brand with custom UA Logo */}
         <Link
           href="/"
-          className="group flex items-center gap-2.5 text-sm font-semibold tracking-tight text-[#222923] dark:text-[#EEF2EC] hover:text-[#38685A] transition-colors"
+          className="group flex items-center gap-2.5 text-sm font-semibold tracking-tight text-[#111827] dark:text-[#F9FAFB] hover:text-[#0D9488] transition-colors"
         >
-          <div className="relative w-7 h-7 rounded-md overflow-hidden bg-black border border-[#222923] dark:border-[#39483D] group-hover:scale-105 transition-transform shrink-0 flex items-center justify-center shadow-2xs">
+          <div className="relative w-7 h-7 rounded-md overflow-hidden bg-black border border-[#111827] dark:border-[#374151] group-hover:scale-105 transition-transform shrink-0 flex items-center justify-center shadow-2xs">
             <img
               src="/logo.png"
               alt="Usama Ali Logo"
@@ -108,20 +108,20 @@ export default function Navbar({ fixed = true }: { fixed?: boolean }) {
             />
           </div>
           <span>Usama Ali</span>
-          <span className="hidden sm:inline-block text-xs font-mono text-[#59645D] dark:text-[#B3BDB5] font-normal pl-2 border-l border-[#E4E4DC] dark:border-[#2B3830]">
+          <span className="hidden sm:inline-block text-xs font-mono text-[#4B5563] dark:text-[#9CA3AF] font-normal pl-2 border-l border-[#E8E8E4] dark:border-[#1F2937]">
             AI Engineer
           </span>
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-5 text-xs font-medium text-[#59645D] dark:text-[#B3BDB5]">
+        <nav className="hidden md:flex items-center gap-5 text-xs font-medium text-[#4B5563] dark:text-[#9CA3AF]">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               aria-current={activeSection === link.id ? "true" : undefined}
-              className={`hover:text-[#222923] dark:hover:text-[#EEF2EC] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#38685A] hover:after:w-full after:transition-all after:duration-200 ${
-                activeSection === link.id ? "text-[#38685A] after:w-full" : ""
+              className={`hover:text-[#111827] dark:hover:text-[#F9FAFB] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#0D9488] hover:after:w-full after:transition-all after:duration-200 ${
+                activeSection === link.id ? "text-[#0D9488] after:w-full" : ""
               }`}
             >
               {link.name}
@@ -130,7 +130,7 @@ export default function Navbar({ fixed = true }: { fixed?: boolean }) {
 
           <Link
             href="/resume"
-            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-[#38685A] hover:bg-[#E6F0E8]/30 dark:hover:bg-[#2D5549]/10 font-mono text-xs font-semibold transition-colors"
+            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-[#0D9488] hover:bg-[#CCFBF1]/30 dark:hover:bg-[#0F766E]/10 font-mono text-xs font-semibold transition-colors"
           >
             <FileText className="w-3.5 h-3.5" />
             <span>Resume</span>
@@ -141,11 +141,11 @@ export default function Navbar({ fixed = true }: { fixed?: boolean }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub Profile"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-[#E4E4DC] dark:border-[#2B3830] bg-white dark:bg-[#1B2420] text-[#222923] dark:text-[#EEF2EC] hover:border-[#38685A]/40 hover:bg-[#F1F0EB] dark:hover:bg-[#232E28] transition-all text-xs font-medium shadow-2xs"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-[#E8E8E4] dark:border-[#1F2937] bg-white dark:bg-[#111827] text-[#111827] dark:text-[#F9FAFB] hover:border-[#0D9488]/40 hover:bg-[#F4F4F0] dark:hover:bg-[#1F2937] transition-all text-xs font-medium shadow-2xs"
           >
             <Github className="w-3.5 h-3.5" />
             <span>GitHub</span>
-            <ArrowUpRight className="w-3 h-3 text-[#818980] dark:text-[#87948A]" />
+            <ArrowUpRight className="w-3 h-3 text-[#9CA3AF] dark:text-[#6B7280]" />
           </a>
 
           <ThemeToggle />
@@ -155,7 +155,7 @@ export default function Navbar({ fixed = true }: { fixed?: boolean }) {
         <div className="flex md:hidden items-center gap-2">
           <Link
             href="/resume"
-            className="px-2 py-1 rounded bg-[#E6F0E8]/40 dark:bg-[#38685A]/15 text-[#38685A] dark:text-[#9AC7A7] text-xs font-mono font-semibold"
+            className="px-2 py-1 rounded bg-[#CCFBF1]/40 dark:bg-[#0D9488]/15 text-[#0D9488] dark:text-[#5EEAD4] text-xs font-mono font-semibold"
           >
             Resume
           </Link>
@@ -164,14 +164,14 @@ export default function Navbar({ fixed = true }: { fixed?: boolean }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub Profile"
-            className="p-1.5 text-[#59645D] dark:text-[#B3BDB5] hover:text-[#222923] dark:hover:text-[#EEF2EC] transition-colors"
+            className="p-1.5 text-[#4B5563] dark:text-[#9CA3AF] hover:text-[#111827] dark:hover:text-[#F9FAFB] transition-colors"
           >
             <Github className="w-4 h-4" />
           </a>
           <ThemeToggle />
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-1.5 rounded-md text-[#59645D] dark:text-[#B3BDB5] hover:text-[#222923] dark:hover:text-[#EEF2EC] hover:bg-[#F1F0EB] dark:hover:bg-[#232E28] transition-colors"
+            className="p-1.5 rounded-md text-[#4B5563] dark:text-[#9CA3AF] hover:text-[#111827] dark:hover:text-[#F9FAFB] hover:bg-[#F4F4F0] dark:hover:bg-[#1F2937] transition-colors"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -181,7 +181,7 @@ export default function Navbar({ fixed = true }: { fixed?: boolean }) {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="menu-enter md:hidden border-b border-[#E4E4DC] dark:border-[#2B3830] bg-[#FAF9F6] dark:bg-[#121815] px-4 pt-3 pb-6 space-y-3">
+        <div className="menu-enter md:hidden border-b border-[#E8E8E4] dark:border-[#1F2937] bg-[#FBFBF9] dark:bg-[#0B0F1A] px-4 pt-3 pb-6 space-y-3">
           <div className="flex flex-col space-y-2">
             {navLinks.map((link) => (
               <a
@@ -191,8 +191,8 @@ export default function Navbar({ fixed = true }: { fixed?: boolean }) {
                 aria-current={activeSection === link.id ? "true" : undefined}
                 className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                   activeSection === link.id
-                    ? "text-[#38685A] bg-[#E6F0E8]/30 dark:bg-[#38685A]/10"
-                    : "text-[#59645D] dark:text-[#B3BDB5] hover:text-[#222923] dark:hover:text-[#EEF2EC] hover:bg-[#F1F0EB] dark:hover:bg-[#232E28]"
+                    ? "text-[#0D9488] bg-[#CCFBF1]/30 dark:bg-[#0D9488]/10"
+                    : "text-[#4B5563] dark:text-[#9CA3AF] hover:text-[#111827] dark:hover:text-[#F9FAFB] hover:bg-[#F4F4F0] dark:hover:bg-[#1F2937]"
                 }`}
               >
                 {link.name}
@@ -201,23 +201,23 @@ export default function Navbar({ fixed = true }: { fixed?: boolean }) {
             <Link
               href="/resume"
               onClick={() => setMobileMenuOpen(false)}
-              className="px-3 py-2 text-sm font-medium text-[#38685A] font-mono hover:bg-[#E6F0E8]/20 dark:hover:bg-[#2D5549]/10 rounded-md transition-colors"
+              className="px-3 py-2 text-sm font-medium text-[#0D9488] font-mono hover:bg-[#CCFBF1]/20 dark:hover:bg-[#0F766E]/10 rounded-md transition-colors"
             >
               Resume
             </Link>
           </div>
-          <div className="pt-2 border-t border-[#E4E4DC] dark:border-[#2B3830]">
+          <div className="pt-2 border-t border-[#E8E8E4] dark:border-[#1F2937]">
             <a
               href="https://github.com/UsamaAliK"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-between w-full px-3 py-2 text-sm font-medium text-[#222923] dark:text-[#EEF2EC] bg-white dark:bg-[#1B2420] border border-[#E4E4DC] dark:border-[#2B3830] rounded-md hover:bg-[#F1F0EB] dark:hover:bg-[#232E28] transition-colors"
+              className="flex items-center justify-between w-full px-3 py-2 text-sm font-medium text-[#111827] dark:text-[#F9FAFB] bg-white dark:bg-[#111827] border border-[#E8E8E4] dark:border-[#1F2937] rounded-md hover:bg-[#F4F4F0] dark:hover:bg-[#1F2937] transition-colors"
             >
               <span className="flex items-center gap-2">
                 <Github className="w-4 h-4" />
                 <span>GitHub Profile</span>
               </span>
-              <ArrowUpRight className="w-4 h-4 text-[#59645D] dark:text-[#B3BDB5]" />
+              <ArrowUpRight className="w-4 h-4 text-[#4B5563] dark:text-[#9CA3AF]" />
             </a>
           </div>
         </div>

@@ -16,12 +16,12 @@ export default function MindlyVisual() {
 
         {/* Address Bar */}
         <div className="flex-1 max-w-md mx-auto flex items-center justify-center gap-2 px-3 py-1 rounded-md bg-white dark:bg-[#0B0F19] border border-[#CBD5E1] dark:border-[#1E293B] text-[11px] font-mono text-[#64748B] dark:text-[#94A3B8] shadow-2xs">
-          <ShieldCheck className="w-3 h-3 text-[#38685A] dark:text-[#9AC7A7]" />
+          <ShieldCheck className="w-3 h-3 text-[#0D9488] dark:text-[#5EEAD4]" />
           <a
             href="https://mindly.one"
             target="_blank"
             rel="noopener noreferrer"
-            className="truncate hover:text-[#38685A] dark:hover:text-[#9AC7A7] transition-colors"
+            className="truncate hover:text-[#0D9488] dark:hover:text-[#5EEAD4] transition-colors"
           >
             https://mindly.one
           </a>
@@ -33,7 +33,7 @@ export default function MindlyVisual() {
             href="https://mindly.one"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-[11px] font-mono font-medium text-[#38685A] dark:text-[#9AC7A7] hover:underline"
+            className="inline-flex items-center gap-1 text-[11px] font-mono font-medium text-[#0D9488] dark:text-[#5EEAD4] hover:underline"
           >
             <span>Live Site</span>
             <ArrowUpRight className="w-3 h-3" />
@@ -42,7 +42,7 @@ export default function MindlyVisual() {
       </div>
 
       {/* Embedded Live Mindly Webpage */}
-      <div className="relative w-full h-[460px] sm:h-[540px] bg-white dark:bg-[#121815]">
+      <div className="relative w-full h-[460px] sm:h-[540px] bg-white dark:bg-[#0B0F1A]">
         <iframe
           src="https://mindly.one"
           title="Mindly Live Webpage"
