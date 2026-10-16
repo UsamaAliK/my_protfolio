@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: ["lucide-react"],
+  experimental: {
+    webpackBuildWorker: false,
+  },
   async redirects() {
     return [
       {

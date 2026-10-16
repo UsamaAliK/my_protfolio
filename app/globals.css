@@ -4,35 +4,36 @@
 
 @layer base {
   :root {
-    --bg-main: #FBFBF9;
+    --bg-main: #FAF9F6;
     --bg-card: #FFFFFF;
-    --bg-subtle: #F4F4F0;
-    --text-main: #111827;
-    --text-muted: #4B5563;
-    --text-subtle: #9CA3AF;
-    --border-main: #E8E8E4;
-    --border-hover: #D1D1CB;
-    --accent-main: #0D9488;
-    --accent-subtle: #CCFBF1;
+    --bg-subtle: #F1F0EB;
+    --text-main: #222923;
+    --text-muted: #59645D;
+    --text-subtle: #818980;
+    --border-main: #E4E4DC;
+    --border-hover: #D3D5CC;
+    --accent-main: #38685A;
+    --accent-subtle: #E6F0E8;
   }
 
   .dark {
-    --bg-main: #0B0F1A;
-    --bg-card: #111827;
-    --bg-subtle: #1F2937;
-    --text-main: #F9FAFB;
-    --text-muted: #9CA3AF;
-    --text-subtle: #6B7280;
-    --border-main: #1F2937;
-    --border-hover: #374151;
-    --accent-main: #0D9488;
-    --accent-subtle: #0D9488;
+    --bg-main: #121815;
+    --bg-card: #1B2420;
+    --bg-subtle: #232E28;
+    --text-main: #EEF2EC;
+    --text-muted: #B3BDB5;
+    --text-subtle: #87948A;
+    --border-main: #2B3830;
+    --border-hover: #39483D;
+    --accent-main: #9AC7A7;
+    --accent-subtle: #9AC7A7;
   }
 
   html {
     scroll-behavior: smooth;
     background-color: var(--bg-main);
     color: var(--text-main);
+    transition: background-color 240ms ease, color 240ms ease;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -42,7 +43,8 @@
     background-color: var(--bg-main);
     color: var(--text-main);
     min-height: 100vh;
-    font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    transition: background-color 240ms ease, color 240ms ease;
     overflow-x: hidden;
   }
 }
@@ -52,16 +54,20 @@
     animation: menu-in 200ms cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
+  .theme-icon-in {
+    animation: theme-icon-in 220ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
   .reveal {
     transition-property: opacity, transform;
-    transition-duration: 620ms;
+    transition-duration: 420ms;
     transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
     transition-delay: var(--reveal-delay, 0ms);
   }
 
   .js .reveal {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(8px);
   }
 
   .js .reveal.is-visible {
@@ -81,7 +87,24 @@
   }
 }
 
+@keyframes theme-icon-in {
+  from {
+    opacity: 0;
+    transform: rotate(-35deg) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  html,
+  body {
+    scroll-behavior: auto;
+    transition: none;
+  }
+
   .js .reveal {
     opacity: 1;
     transform: none;
@@ -91,6 +114,10 @@
   .menu-enter {
     animation: none;
   }
+
+  .theme-icon-in {
+    animation: none;
+  }
 }
 
 /* Custom subtle scrollbar */
@@ -98,37 +125,37 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #FBFBF9;
+  background: #FAF9F6;
 }
 .dark ::-webkit-scrollbar-track {
-  background: #0B0F1A;
+  background: #121815;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D1D1CB;
+  background: #D3D5CC;
   border-radius: 4px;
 }
 .dark ::-webkit-scrollbar-thumb {
-  background: #374151;
+  background: #39483D;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #9CA3AF;
+  background: #818980;
 }
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: #4B5563;
+  background: #59645D;
 }
 
 /* Focus styles for keyboard accessibility */
 *:focus-visible {
-  outline: 2px solid #0D9488;
+  outline: 2px solid #38685A;
   outline-offset: 2px;
 }
 
 /* Restrained selection styling */
 ::selection {
-  background-color: #CCFBF1;
-  color: #0F766E;
+  background-color: #E6F0E8;
+  color: #38685A;
 }
 .dark ::selection {
-  background-color: rgba(13, 148, 136, 0.3);
-  color: #5EEAD4;
+  background-color: rgba(154, 199, 167, 0.22);
+  color: #9AC7A7;
 }

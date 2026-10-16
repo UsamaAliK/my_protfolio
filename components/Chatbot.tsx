@@ -143,16 +143,16 @@ export default function Chatbot() {
         onClick={() => setOpen((value) => !value)}
         aria-label={open ? "Close chat assistant" : "Open chat assistant"}
         aria-expanded={open}
-        className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 flex items-center gap-2.5 h-12 pl-4 pr-5 rounded-full bg-[#0D9488] hover:bg-[#0F766E] text-white text-xs font-semibold tracking-wide shadow-lg shadow-[#0D9488]/25 transition-all hover:shadow-xl hover:shadow-[#0D9488]/30 active:scale-95 cursor-pointer"
+        className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 flex items-center gap-2.5 h-12 pl-4 pr-5 rounded-full bg-[#38685A] hover:bg-[#2D5549] text-white text-xs font-semibold tracking-wide shadow-lg shadow-[#38685A]/25 transition-all hover:shadow-xl hover:shadow-[#38685A]/30 active:scale-95 cursor-pointer"
       >
         {open ? (
           <X className="w-5 h-5" />
         ) : (
-          <Sparkles className="w-4 h-4 text-[#CCFBF1]" />
+          <Sparkles className="w-4 h-4 text-[#E6F0E8]" />
         )}
         <span className="hidden sm:inline">{open ? "Close" : "Ask about me"}</span>
         {!open && unread > 0 && (
-          <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-[#CCFBF1] text-[#0F766E] text-[10px] font-bold flex items-center justify-center border-2 border-[#0D9488]">
+          <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-[#E6F0E8] text-[#38685A] text-[10px] font-bold flex items-center justify-center border-2 border-[#38685A]">
             {unread}
           </span>
         )}
@@ -162,11 +162,11 @@ export default function Chatbot() {
         <div
           role="dialog"
           aria-label="Portfolio chat assistant"
-          className="fixed z-50 bottom-20 right-3 left-3 sm:left-auto sm:right-6 sm:w-[23rem] h-[min(30rem,72vh)] flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-[#111827] border border-[#E8E8E4] dark:border-[#1F2937] shadow-2xl"
+          className="fixed z-50 bottom-20 right-3 left-3 sm:left-auto sm:right-6 sm:w-[23rem] h-[min(30rem,72vh)] flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-[#1B2420] border border-[#E4E4DC] dark:border-[#2B3830] shadow-2xl"
         >
-          <div className="flex items-center justify-between gap-3 px-4 py-3 border-b border-[#E8E8E4] dark:border-[#1F2937] bg-[#FBFBF9] dark:bg-[#0B0F1A] shrink-0">
+          <div className="flex items-center justify-between gap-3 px-4 py-3 border-b border-[#E4E4DC] dark:border-[#2B3830] bg-[#FAF9F6] dark:bg-[#121815] shrink-0">
             <div className="flex items-center gap-3 min-w-0">
-              <div className="relative w-8 h-8 rounded-lg overflow-hidden bg-black border border-[#111827] dark:border-[#374151] shrink-0">
+              <div className="relative w-8 h-8 rounded-lg overflow-hidden bg-black border border-[#222923] dark:border-[#39483D] shrink-0">
                 <img
                   src="/logo.png"
                   alt=""
@@ -176,9 +176,9 @@ export default function Chatbot() {
                 />
               </div>
               <div className="min-w-0">
-                <p className="text-xs font-semibold text-[#111827] dark:text-[#F9FAFB] truncate flex items-center gap-1.5">
+                <p className="text-xs font-semibold text-[#222923] dark:text-[#EEF2EC] truncate flex items-center gap-1.5">
                   <span>Usama&apos;s Assistant</span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#0D9488] animate-pulse shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#38685A] shrink-0" />
                 </p>
               </div>
             </div>
@@ -187,7 +187,7 @@ export default function Chatbot() {
                 type="button"
                 onClick={reset}
                 aria-label="Reset conversation"
-                className="p-1.5 rounded-md text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111827] dark:hover:text-[#F9FAFB] hover:bg-[#F4F4F0] dark:hover:bg-[#1F2937] transition-colors cursor-pointer"
+                className="p-1.5 rounded-md text-[#59645D] dark:text-[#B3BDB5] hover:text-[#222923] dark:hover:text-[#EEF2EC] hover:bg-[#F1F0EB] dark:hover:bg-[#232E28] transition-colors cursor-pointer"
               >
                 <RotateCcw className="w-4 h-4" />
               </button>
@@ -195,7 +195,7 @@ export default function Chatbot() {
                 type="button"
                 onClick={() => setOpen(false)}
                 aria-label="Close chat assistant"
-                className="p-1.5 rounded-md text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111827] dark:hover:text-[#F9FAFB] hover:bg-[#F4F4F0] dark:hover:bg-[#1F2937] transition-colors cursor-pointer"
+                className="p-1.5 rounded-md text-[#59645D] dark:text-[#B3BDB5] hover:text-[#222923] dark:hover:text-[#EEF2EC] hover:bg-[#F1F0EB] dark:hover:bg-[#232E28] transition-colors cursor-pointer"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -215,22 +215,22 @@ export default function Chatbot() {
                   className={`flex gap-2 ${isUser ? "justify-end" : "justify-start"}`}
                 >
                   {!isUser && (
-                    <div className="w-6 h-6 rounded-md bg-[#CCFBF1] dark:bg-[#0D9488]/20 flex items-center justify-center shrink-0 mt-0.5">
-                      <Bot className="w-3.5 h-3.5 text-[#0F766E] dark:text-[#5EEAD4]" />
+                    <div className="w-6 h-6 rounded-md bg-[#E6F0E8] dark:bg-[#38685A]/20 flex items-center justify-center shrink-0 mt-0.5">
+                      <Bot className="w-3.5 h-3.5 text-[#38685A] dark:text-[#9AC7A7]" />
                     </div>
                   )}
                   <div
                     className={`max-w-[82%] px-3 py-2 rounded-xl text-xs leading-relaxed whitespace-pre-wrap ${
                       isUser
-                        ? "bg-[#0D9488] text-white rounded-br-sm"
-                        : "bg-[#F4F4F0] dark:bg-[#1F2937] text-[#374151] dark:text-[#D1D5DB] rounded-bl-sm"
+                        ? "bg-[#38685A] text-white rounded-br-sm"
+                        : "bg-[#F1F0EB] dark:bg-[#232E28] text-[#39483D] dark:text-[#D1D5DB] rounded-bl-sm"
                     }`}
                   >
                     {message.text}
                   </div>
                   {isUser && (
-                    <div className="w-6 h-6 rounded-md bg-[#111827] dark:bg-[#F9FAFB] flex items-center justify-center shrink-0 mt-0.5">
-                      <User className="w-3.5 h-3.5 text-white dark:text-[#111827]" />
+                    <div className="w-6 h-6 rounded-md bg-[#222923] dark:bg-[#EEF2EC] flex items-center justify-center shrink-0 mt-0.5">
+                      <User className="w-3.5 h-3.5 text-white dark:text-[#222923]" />
                     </div>
                   )}
                 </div>
@@ -239,14 +239,14 @@ export default function Chatbot() {
 
             {pending && (
               <div className="flex gap-2 justify-start">
-                <div className="w-6 h-6 rounded-md bg-[#CCFBF1] dark:bg-[#0D9488]/20 flex items-center justify-center shrink-0 mt-0.5">
-                  <Bot className="w-3.5 h-3.5 text-[#0F766E] dark:text-[#5EEAD4]" />
+                <div className="w-6 h-6 rounded-md bg-[#E6F0E8] dark:bg-[#38685A]/20 flex items-center justify-center shrink-0 mt-0.5">
+                  <Bot className="w-3.5 h-3.5 text-[#38685A] dark:text-[#9AC7A7]" />
                 </div>
-                <div className="px-3 py-2.5 rounded-xl rounded-bl-sm bg-[#F4F4F0] dark:bg-[#1F2937] flex items-center gap-1">
+                <div className="px-3 py-2.5 rounded-xl rounded-bl-sm bg-[#F1F0EB] dark:bg-[#232E28] flex items-center gap-1">
                   {[0, 1, 2].map((dot) => (
                     <span
                       key={dot}
-                      className="w-1.5 h-1.5 rounded-full bg-[#0D9488] dark:bg-[#5EEAD4] animate-bounce"
+                      className="w-1.5 h-1.5 rounded-full bg-[#38685A] dark:bg-[#9AC7A7] animate-bounce"
                       style={{ animationDelay: `${dot * 140}ms` }}
                     />
                   ))}
@@ -279,7 +279,7 @@ export default function Chatbot() {
                     key={prompt}
                     type="button"
                     onClick={() => send(prompt)}
-                    className="w-full text-left px-3 py-2 rounded-lg bg-white dark:bg-[#0B0F1A] border border-[#E8E8E4] dark:border-[#1F2937] text-[11px] text-[#4B5563] dark:text-[#9CA3AF] hover:border-[#0D9488]/40 dark:hover:border-[#5EEAD4]/40 hover:text-[#0D9488] dark:hover:text-[#5EEAD4] transition-colors cursor-pointer"
+                    className="w-full text-left px-3 py-2 rounded-lg bg-white dark:bg-[#121815] border border-[#E4E4DC] dark:border-[#2B3830] text-[11px] text-[#59645D] dark:text-[#B3BDB5] hover:border-[#38685A]/40 dark:hover:border-[#9AC7A7]/40 hover:text-[#38685A] dark:hover:text-[#9AC7A7] transition-colors cursor-pointer"
                   >
                     {prompt}
                   </button>
@@ -288,7 +288,7 @@ export default function Chatbot() {
             )}
           </div>
 
-          <div className="border-t border-[#E8E8E4] dark:border-[#1F2937] p-3 shrink-0">
+          <div className="border-t border-[#E4E4DC] dark:border-[#2B3830] p-3 shrink-0">
             <div className="flex items-end gap-2">
               <textarea
                 ref={inputRef}
@@ -304,7 +304,7 @@ export default function Chatbot() {
                 maxLength={2000}
                 placeholder="Ask about his projects, stack, experience…"
                 aria-label="Message"
-                className="flex-1 resize-none max-h-24 px-3 py-2 rounded-lg bg-[#F4F4F0] dark:bg-[#0B0F1A] border border-[#E8E8E4] dark:border-[#1F2937] text-xs text-[#111827] dark:text-[#F9FAFB] placeholder-[#9CA3AF] focus:border-[#0D9488]/50 dark:focus:border-[#5EEAD4]/50 focus:outline-none transition-colors"
+                className="flex-1 resize-none max-h-24 px-3 py-2 rounded-lg bg-[#F1F0EB] dark:bg-[#121815] border border-[#E4E4DC] dark:border-[#2B3830] text-xs text-[#222923] dark:text-[#EEF2EC] placeholder-[#818980] focus:border-[#38685A]/50 dark:focus:border-[#9AC7A7]/50 focus:outline-none transition-colors"
                 style={{ height: "auto" }}
                 onInput={(event) => {
                   const target = event.currentTarget;
@@ -317,7 +317,7 @@ export default function Chatbot() {
                 onClick={() => send()}
                 disabled={pending || draft.trim().length === 0}
                 aria-label="Send message"
-                className="w-9 h-9 shrink-0 rounded-lg bg-[#0D9488] hover:bg-[#0F766E] disabled:bg-[#D1D1CB] dark:disabled:bg-[#374151] disabled:cursor-not-allowed text-white flex items-center justify-center transition-colors cursor-pointer"
+                className="w-9 h-9 shrink-0 rounded-lg bg-[#38685A] hover:bg-[#2D5549] disabled:bg-[#D3D5CC] dark:disabled:bg-[#39483D] disabled:cursor-not-allowed text-white flex items-center justify-center transition-colors cursor-pointer"
               >
                 {pending ? (
                   <Send className="w-4 h-4 opacity-50" />
@@ -326,7 +326,7 @@ export default function Chatbot() {
                 )}
               </button>
             </div>
-            <p className="mt-2 text-[10px] font-mono text-[#9CA3AF] text-center">
+            <p className="mt-2 text-[10px] font-mono text-[#818980] text-center">
               Answers grounded in his resume
             </p>
           </div>

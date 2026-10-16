@@ -6,36 +6,36 @@ export default function TechnicalPositioning() {
   const tiers = [
     {
       title: "AI & ML Intelligence",
-      tech: "RAG · LLMs · Embeddings · Agents · PyTorch · Scikit-learn",
-      desc: "Designing retrieval pipelines, prompt structures, and ML models.",
+      tech: "RAG · LLMs · Embeddings · Cross-Encoders · PyTorch · Scikit-learn",
+      desc: "Dense & sparse vector retrieval, reranking, context assembly, and inference optimization.",
       icon: Cpu,
     },
     {
       title: "Backend Services",
       tech: "Python · FastAPI · REST APIs · SQLAlchemy · Alembic · N8N",
-      desc: "Building performant, type-safe APIs and automated workflows.",
+      desc: "Asynchronous microservices, strict Pydantic schemas, and workflow automation.",
       icon: Server,
     },
     {
       title: "Data & Storage",
       tech: "PostgreSQL · pgvector · ChromaDB · FAISS · SQLite",
-      desc: "Managing relational schemas, vector indices, and similarity search.",
+      desc: "Normalized database design, vector index indexing (HNSW/IVFFlat), and hybrid querying.",
       icon: Database,
     },
   ];
 
   return (
-    <div className="bg-white dark:bg-[#111827] border border-[#E8E8E4] dark:border-[#1F2937] rounded-xl p-6 shadow-2xs my-8">
-      <div className="flex items-center justify-between mb-5 pb-3 border-b border-[#E8E8E4] dark:border-[#1F2937]">
+    <div className="bg-white dark:bg-[#1B2420] border border-[#E4E4DC] dark:border-[#2B3830] rounded-xl p-6 shadow-2xs my-8">
+      <div className="flex items-center justify-between mb-5 pb-3 border-b border-[#E4E4DC] dark:border-[#2B3830]">
         <div>
-          <span className="text-xs font-mono text-[#0D9488] dark:text-[#5EEAD4] font-semibold uppercase tracking-wider">
+          <span className="text-xs font-mono text-[#38685A] dark:text-[#9AC7A7] font-semibold uppercase tracking-wider">
             Technical Architecture
           </span>
-          <h3 className="text-sm font-semibold text-[#111827] dark:text-[#F9FAFB] mt-0.5">
+          <h3 className="text-sm font-semibold text-[#222923] dark:text-[#EEF2EC] mt-0.5">
             Full-Stack AI & Backend Engineering Stack
           </h3>
         </div>
-        <span className="text-[11px] font-mono text-[#6B7280] dark:text-[#9CA3AF]">
+        <span className="text-[11px] font-mono text-[#59645D] dark:text-[#B3BDB5]">
           End-to-End System
         </span>
       </div>
@@ -46,25 +46,25 @@ export default function TechnicalPositioning() {
           return (
             <div
               key={tier.title}
-              className="p-4 rounded-lg bg-[#FBFBF9] dark:bg-[#0B0F1A] border border-[#E8E8E4] dark:border-[#1F2937] hover:border-[#0D9488]/40 dark:hover:border-[#5EEAD4]/40 transition-colors flex flex-col justify-between"
+              className="p-4 rounded-lg bg-[#FAF9F6] dark:bg-[#121815] border border-[#E4E4DC] dark:border-[#2B3830] hover:border-[#38685A]/40 dark:hover:border-[#9AC7A7]/40 transition-colors flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="p-1.5 rounded bg-white dark:bg-[#111827] border border-[#E8E8E4] dark:border-[#1F2937] text-[#0D9488] dark:text-[#5EEAD4]">
+                  <span className="p-1.5 rounded bg-white dark:bg-[#1B2420] border border-[#E4E4DC] dark:border-[#2B3830] text-[#38685A] dark:text-[#9AC7A7]">
                     <Icon className="w-3.5 h-3.5" />
                   </span>
-                  <span className="text-[10px] font-mono text-[#9CA3AF] dark:text-[#6B7280]">
-                    Tier 0{index + 1}
+                  <span className="text-[10px] font-mono text-[#818980] dark:text-[#87948A]">
+                    Layer 0{index + 1}
                   </span>
                 </div>
-                <h4 className="text-xs font-bold text-[#111827] dark:text-[#F9FAFB] mb-1">
+                <h4 className="text-xs font-bold text-[#222923] dark:text-[#EEF2EC] mb-1">
                   {tier.title}
                 </h4>
-                <p className="text-[11px] font-mono text-[#0D9488] dark:text-[#5EEAD4] mb-2 leading-relaxed">
+                <p className="text-[11px] font-mono text-[#38685A] dark:text-[#9AC7A7] mb-2 leading-relaxed">
                   {tier.tech}
                 </p>
               </div>
-              <p className="text-[11px] text-[#6B7280] dark:text-[#9CA3AF] leading-normal pt-2 border-t border-[#E8E8E4]/60 dark:border-[#1F2937]/60">
+              <p className="text-[11px] text-[#59645D] dark:text-[#B3BDB5] leading-normal pt-2 border-t border-[#E4E4DC]/60 dark:border-[#2B3830]/60">
                 {tier.desc}
               </p>
             </div>
