@@ -24,7 +24,7 @@ export default function Hero() {
 
             <Reveal delay={160}>
               <p className="text-base sm:text-lg text-[#4B5563] dark:text-[#9CA3AF] max-w-2xl leading-relaxed mb-8">
-                I'm an AI engineer focused on Python, machine learning, RAG systems, LLM applications, and backend development. I enjoy turning AI ideas into practical software that people can actually use. I work across machine learning, LLMs, and Python backend development, building models, APIs, and retrieval systems that turn data into useful features.
+                I'm an AI engineer working on language model training and building AI applications with Python, RAG systems, LLM APIs, embeddings, and semantic search. Currently training GLMs at Hubble42. I enjoy turning AI ideas into practical software that people can actually use.
               </p>
             </Reveal>
 

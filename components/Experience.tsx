@@ -4,16 +4,28 @@ import Reveal from "./Reveal";
 export default function Experience() {
   const experiences = [
     {
+      role: "AI Engineer",
+      company: "Hubble42",
+      period: "June 2026 – Present",
+      type: "Full-time",
+      highlights: [
+        "Contribute to the training of General Language Models (GLMs) as part of AI model development workflows.",
+        "Work on language model training tasks and gain hands-on experience with LLM development.",
+        "Support AI engineering workflows focused on developing and improving language models.",
+      ],
+      skills: ["GLM Training", "LLM Development", "Python", "AI Engineering", "Model Training"],
+    },
+    {
       role: "GenAI Engineer Intern",
       company: "CypherShield",
       period: "July – November 2025",
       type: "Internship",
       highlights: [
-        "Integrated LLM APIs into backend services, using Pydantic validation and retries to handle inconsistent responses.",
-        "Automated data processing with n8n webhooks, Python scripts, and internal REST endpoints.",
-        "Added checks for retrieval quality, latency, and response consistency.",
+        "Contributed to GenAI application workflows by integrating and working with LLM APIs.",
+        "Built automation workflows using n8n to streamline recurring development tasks.",
+        "Collaborated with team members to communicate requirements and support GenAI development activities.",
       ],
-      skills: ["LLM Orchestration", "Python", "FastAPI", "N8N Automation", "Pydantic", "API Integration"],
+      skills: ["GenAI Workflows", "LLM APIs", "N8N Automation", "Python", "API Integration"],
     },
   ];
 
@@ -30,7 +42,7 @@ export default function Experience() {
               Work Experience
             </h2>
             <p className="text-sm sm:text-base text-[#4B5563] dark:text-[#9CA3AF] leading-relaxed">
-              At CypherShield, I worked on LLM integrations and the backend workflows around them.
+              Currently training General Language Models at Hubble42. Previously worked on GenAI applications and LLM integrations at CypherShield.
             </p>
           </div>
         </Reveal>

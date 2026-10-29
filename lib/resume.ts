@@ -54,23 +54,34 @@ export const RESUME: Resume = {
   availability:
     "Open to AI/ML engineering, GenAI application, and Python backend roles, including internships and full-time positions.",
   summary:
-    "AI/ML Engineer with hands-on experience building AI applications using Python, RAG pipelines, LLM APIs, embeddings, and machine learning. Experienced in FastAPI backend development, PostgreSQL, semantic search, and integrating AI technologies into practical applications.",
+    "AI/ML Engineer with hands-on experience in language model training and building AI applications using Python, RAG pipelines, LLM APIs, embeddings, and semantic search. Experienced in FastAPI backend development, database integration, and developing practical AI solutions involving retrieval, research, and intelligent agents.",
   focus: [
+    "Language model training and GLM development",
     "RAG pipelines and retrieval-augmented generation",
-    "LLM API integration and prompt-driven application design",
+    "LLM API integration and AI agent development",
     "Vector search, embeddings, chunking, and reranking",
     "Python backend engineering with FastAPI",
-    "Machine learning with PyTorch, TensorFlow, and Scikit-learn",
     "Database design and persistence with PostgreSQL and pgvector",
   ],
   experience: [
+    {
+      role: "AI Engineer",
+      company: "Hubble42",
+      period: "June 2026 – Present",
+      highlights: [
+        "Contribute to the training of General Language Models (GLMs) as part of AI model development workflows.",
+        "Work on language model training tasks and gain hands-on experience with LLM development.",
+        "Support AI engineering workflows focused on developing and improving language models.",
+      ],
+      stack: ["GLM Training", "LLM Development", "Python", "AI Engineering", "Model Training"],
+    },
     {
       role: "GenAI Engineer Intern",
       company: "CypherShield",
       period: "July – November 2025",
       highlights: [
         "Contributed to GenAI application workflows by integrating and working with LLM APIs.",
-        "Built automation workflows using N8N to streamline recurring development tasks.",
+        "Built automation workflows using n8n to streamline recurring development tasks.",
         "Collaborated with team members to communicate requirements and support GenAI development activities.",
       ],
       stack: ["GenAI Workflows", "LLM APIs", "N8N", "Python", "API Integration"],
@@ -78,26 +89,38 @@ export const RESUME: Resume = {
   ],
   projects: [
     {
+      title: "Mindly — AI Knowledge Management (Final Year Project)",
+      link: "https://mindly.one/",
+      summary:
+        "An AI-powered knowledge workspace that transforms content from documents, videos, meetings, and notes into searchable, structured knowledge.",
+      highlights: [
+        "Developing an AI-powered knowledge workspace that transforms content from documents, videos, meetings, and notes into searchable, structured knowledge.",
+        "Working with Python, FastAPI, LLM APIs, embeddings, and retrieval workflows to support semantic search and context-aware answers.",
+      ],
+      stack: ["Python", "FastAPI", "LLM APIs", "Embeddings", "RAG", "Semantic Search", "pgvector"],
+    },
+    {
       title: "RepoGuide — AI-Powered Codebase Q&A",
       link: "https://github.com/UsamaAliK/RepoGuide",
       summary:
         "Analyzes GitHub repositories and provides context-aware answers about their codebase using RAG.",
       highlights: [
-        "Built repository ingestion, code-aware chunking, embeddings, semantic search, and reranking using Python, FastAPI, ChromaDB, Gemini, Jina AI, and LangChain.",
-        "Implemented PostgreSQL persistence using SQLAlchemy and Alembic migrations for users, repositories, conversations, and messages.",
+        "Built repository ingestion, code-aware chunking, embeddings, semantic search, and reranking using Python, FastAPI, PostgreSQL/pgvector, Gemini, Jina AI, and LangChain.",
+        "Implemented database persistence with SQLAlchemy and Alembic migrations for users, repositories, conversations, and messages.",
       ],
-      stack: ["Python", "FastAPI", "RAG", "LangChain", "ChromaDB", "Gemini", "Jina AI", "PostgreSQL", "SQLAlchemy", "Alembic"],
+      stack: ["Python", "FastAPI", "RAG", "LangChain", "PostgreSQL", "pgvector", "Gemini", "Jina AI", "SQLAlchemy", "Alembic"],
     },
     {
-      title: "Mindly — Knowledge-Based Learning System",
-      link: "https://mindly.one/",
+      title: "TutorDesk — AI Teaching Assistant",
+      link: "https://github.com/UsamaAliK/TutorDesk",
       summary:
-        "A knowledge-based AI system using RAG, embeddings, and LLM APIs for context-aware responses.",
+        "A RAG-based teaching assistant for course questions, quizzes, assignments, lesson plans, and explanations.",
       highlights: [
-        "Built a knowledge-based AI system using RAG, embeddings, and LLM APIs for context-aware responses.",
-        "Implemented document ingestion and semantic retrieval using Python, Next.js, and pgvector.",
+        "Built a RAG-based teaching assistant using Python, FastAPI, Gemini, and structured LLM outputs for course questions, quizzes, assignments, lesson plans, and explanations.",
+        "Implemented document ingestion, PDF extraction, chunking, Gemini embeddings, and course-specific retrieval using PostgreSQL with pgvector.",
+        "Developed a research agent that routes requests between course-material retrieval and web research using LangChain tools and Tavily; integrated a speech-to-text pipeline.",
       ],
-      stack: ["Python", "Next.js", "RAG", "Embeddings", "pgvector", "LLM APIs"],
+      stack: ["Python", "FastAPI", "RAG", "Gemini", "LangChain", "Tavily", "PostgreSQL", "pgvector", "Speech-to-Text"],
     },
     {
       title: "Movie Recommendation System",
@@ -105,7 +128,7 @@ export const RESUME: Resume = {
       summary:
         "A collaborative filtering movie recommendation system using Singular Value Decomposition (SVD).",
       highlights: [
-        "Built a collaborative filtering movie recommendation system using Singular Value Decomposition (SVD).",
+        "Built a collaborative-filtering recommendation system using Singular Value Decomposition (SVD).",
         "Implemented data preprocessing, model training, and recommendation generation using Python, Scikit-learn, and Surprise.",
       ],
       stack: ["Python", "Scikit-learn", "Surprise", "SVD", "Pandas", "NumPy"],
@@ -114,11 +137,11 @@ export const RESUME: Resume = {
   skills: [
     {
       category: "Programming Languages",
-      items: ["Python"],
+      items: ["Python", "C++", "SQL"],
     },
     {
       category: "AI & Machine Learning",
-      items: ["RAG", "LLM APIs", "Embeddings", "LangChain", "PyTorch", "TensorFlow"],
+      items: ["LLMs", "GLM Training", "RAG", "AI Agents", "LangChain", "LangGraph", "Fine-Tuning", "Transformers", "NLP", "Neural Networks", "Supervised & Unsupervised Learning", "Hyperparameter Tuning", "Model Evaluation", "EDA", "Speech-to-Text", "Multimodal AI"],
     },
     {
       category: "Backend & Security",
@@ -126,11 +149,11 @@ export const RESUME: Resume = {
     },
     {
       category: "Databases & Vector Search",
-      items: ["PostgreSQL", "SQLite", "pgvector", "ChromaDB", "FAISS"],
+      items: ["PostgreSQL", "SQLite", "MySQL", "pgvector", "ChromaDB", "FAISS"],
     },
     {
-      category: "Tools & Automation",
-      items: ["Pandas", "NumPy", "Git", "GitHub API", "N8N"],
+      category: "Tools & Infrastructure",
+      items: ["Git", "GitHub", "VS Code", "Jupyter Notebook", "Ollama", "n8n", "MLflow", "Docker", "CI/CD", "AWS EC2", "AWS S3"],
     },
   ],
   education: {
@@ -228,7 +251,7 @@ export const OPENING_MESSAGE =
 
 export const SUGGESTED_PROMPTS = [
   "What does Usama specialize in?",
-  "Tell me about RepoGuide",
+  "Tell me about his work at Hubble42",
   "Which RAG and vector search tools has he used?",
   "Is he open to new roles?",
 ];
